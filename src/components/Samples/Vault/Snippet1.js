@@ -1,0 +1,35 @@
+import { useEffect } from "react";
+import CodeBlock from "@theme/CodeBlock";
+
+const code = `n<64> := -1
+replace <getchar@plt> () by
+  n := n + 1
+  return uext64 stdin[n]
+end
+
+replace <fflush@plt>, <fwrite@plt>, <printf@plt>, <putchar@plt>, <puts@plt> by
+  return
+end
+
+replace <tcgetattr@plt>, <tcsetattr@plt> by
+  return 0
+end
+
+halt at <exit@plt>
+
+load sections .rodata, .data from file
+starting from <main>
+with concrete stack pointer
+
+reach <puts@plt> (str) such that @[str, 24] = '\\\\o/ Access granted! \\\\o/'z
+                       then print c string stdin`
+
+export default ({ onChange, ...props }) => {
+
+    useEffect(() => onChange(code), []);
+
+    return (<CodeBlock language="dba">
+            {code}
+        </CodeBlock>)
+
+}

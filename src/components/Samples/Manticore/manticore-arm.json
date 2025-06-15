@@ -1,0 +1,2705 @@
+[
+  {
+    "label": "header",
+    "name": "elf-header",
+    "content": [
+      {
+        "label": "magic",
+        "string": "ELF",
+        "content": { "bytes": [ 127, 69, 76, 70 ], "size": 4 }
+      },
+      {
+        "bytes": [
+          1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 40, 0, 1, 0, 0, 0, 248,
+          2, 1, 0, 52, 0, 0, 0, 156, 5, 0, 0, 0, 2, 0, 5, 52, 0, 32, 0, 2, 0,
+          40, 0, 8, 0, 7, 0
+        ],
+        "size": 48
+      }
+    ]
+  },
+  {
+    "label": "header",
+    "name": "program-header",
+    "content": {
+      "bytes": [
+        1, 0, 0, 0, 116, 0, 0, 0, 116, 0, 1, 0, 116, 0, 1, 0, 167, 2, 0, 0,
+        172, 2, 1, 0, 7, 0, 0, 0, 4, 0, 0, 0, 81, 229, 116, 100, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 16, 0, 0,
+        0
+      ],
+      "size": 64
+    }
+  },
+  {
+    "label": "section",
+    "type": "PROGBITS",
+    "name": ".text",
+    "flags": "r-x",
+    "content": [
+      {
+        "label": "symbol",
+        "name": "main",
+        "value": "0x10074",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x00010074",
+            "mnemonic": "stmdb\tsp!, {r0, r1, r2, r3, r4, lr}",
+            "opcode": "e9 2d 40 1f ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -24<32>);" },
+              { "id": 1, "op": "%%1<32> := r0<32>;" },
+              { "id": 2, "op": "%%2<32> := r1<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -20<32>);" },
+              { "id": 4, "op": "%%4<32> := r2<32>;" },
+              { "id": 5, "op": "%%5<32> := (sp<32> + -16<32>);" },
+              { "id": 6, "op": "%%6<32> := r3<32>;" },
+              { "id": 7, "op": "%%7<32> := (sp<32> + -12<32>);" },
+              { "id": 8, "op": "%%8<32> := r4<32>;" },
+              { "id": 9, "op": "%%9<32> := (sp<32> + -8<32>);" },
+              { "id": 10, "op": "%%10<32> := lr<32>;" },
+              { "id": 11, "op": "%%11<32> := (sp<32> + -4<32>);" },
+              { "id": 12, "op": "@[%%11<32>,<-,4] := %%10<32>;" },
+              { "id": 13, "op": "@[%%9<32>,<-,4] := %%8<32>;" },
+              { "id": 14, "op": "@[%%7<32>,<-,4] := %%6<32>;" },
+              { "id": 15, "op": "@[%%5<32>,<-,4] := %%4<32>;" },
+              { "id": 16, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 17, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 18, "op": "sp<32> := %%0<32>;" },
+              { "id": 19, "op": "goto (0x00010078, 0) " }
+            ],
+            "content": { "bytes": [ 31, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010078",
+            "mnemonic": "ldr\tr0, [pc, #48]",
+            "opcode": "e5 9f 00 30 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[0x000100b0,<-,4];" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001007c, 0) " }
+            ],
+            "content": { "bytes": [ 48, 0, 159, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001007c",
+            "mnemonic": "bl\t0x102bc",
+            "opcode": "eb 00 00 8e ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010080;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102bc, 0) #call with return address @ (0x00010080, 0)"
+              }
+            ],
+            "content": { "bytes": [ 142, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010080",
+            "mnemonic": "ldr\tr3, [pc, #44]",
+            "opcode": "e5 9f 30 2c ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[0x000100b4,<-,4];" },
+              { "id": 1, "op": "r3<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010084, 0) " }
+            ],
+            "content": { "bytes": [ 44, 48, 159, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010084",
+            "mnemonic": "mov\tr1, #12",
+            "opcode": "e3 a0 10 0c ",
+            "code": [
+              { "id": 0, "op": "r1<32> := 12<32>;" },
+              { "id": 1, "op": "goto (0x00010088, 0) " }
+            ],
+            "content": { "bytes": [ 12, 16, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010088",
+            "mnemonic": "ldr\tr2, [r3, #0]",
+            "opcode": "e5 93 20 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[r3<32>,<-,4];" },
+              { "id": 1, "op": "r2<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001008c, 0) " }
+            ],
+            "content": { "bytes": [ 0, 32, 147, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001008c",
+            "mnemonic": "add\tr0, sp, #4",
+            "opcode": "e2 8d 00 04 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + 4<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010090, 0) " }
+            ],
+            "content": { "bytes": [ 4, 0, 141, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010090",
+            "mnemonic": "bl\t0x10258",
+            "opcode": "eb 00 00 70 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010094;" },
+              {
+                "id": 1,
+                "op": "goto (0x00010258, 0) #call with return address @ (0x00010094, 0)"
+              }
+            ],
+            "content": { "bytes": [ 112, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010094",
+            "mnemonic": "add\tr0, sp, #4",
+            "opcode": "e2 8d 00 04 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + 4<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010098, 0) " }
+            ],
+            "content": { "bytes": [ 4, 0, 141, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010098",
+            "mnemonic": "bl\t0x101f0",
+            "opcode": "eb 00 00 54 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x0001009c;" },
+              {
+                "id": 1,
+                "op": "goto (0x000101f0, 0) #call with return address @ (0x0001009c, 0)"
+              }
+            ],
+            "content": { "bytes": [ 84, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001009c",
+            "mnemonic": "ldr\tr0, [pc, #20]",
+            "opcode": "e5 9f 00 14 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[0x000100b8,<-,4];" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000100a0, 0) " }
+            ],
+            "content": { "bytes": [ 20, 0, 159, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100a0",
+            "mnemonic": "bl\t0x102bc",
+            "opcode": "eb 00 00 85 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x000100a4;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102bc, 0) #call with return address @ (0x000100a4, 0)"
+              }
+            ],
+            "content": { "bytes": [ 133, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100a4",
+            "mnemonic": "mov\tr0, #0",
+            "opcode": "e3 a0 00 00 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 0<32>;" },
+              { "id": 1, "op": "goto (0x000100a8, 0) " }
+            ],
+            "content": { "bytes": [ 0, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100a8",
+            "mnemonic": "add\tsp, sp, #20",
+            "opcode": "e2 8d d0 14 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + 20<32>);" },
+              { "id": 1, "op": "sp<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000100ac, 0) " }
+            ],
+            "content": { "bytes": [ 20, 208, 141, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100ac",
+            "mnemonic": "ldr\tpc, [sp], #4",
+            "opcode": "e4 9d f0 04 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[sp<32>,<-,4];" },
+              { "id": 1, "op": "%%1<1> := %%0<32>{0};" },
+              { "id": 2, "op": "%%2<32> := (sp<32> + 4<32>);" },
+              {
+                "id": 3,
+                "op": "%%3<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+              },
+              { "id": 4, "op": "sp<32> := %%2<32>;" },
+              { "id": 5, "op": "t<1> := %%1<1>;" },
+              { "id": 6, "op": "goto %%3<32> " }
+            ],
+            "content": { "bytes": [ 4, 240, 157, 228 ], "size": 4 }
+          },
+          { "bytes": [ 4, 3, 1, 0, 28, 3, 2, 0, 17, 3, 1, 0 ], "size": 12 }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_0",
+        "value": "0x100bc",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000100bc",
+            "mnemonic": "cmp\tr0, #61",
+            "opcode": "e3 50 00 3d ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 61<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 61<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 61<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x000100c0, 0) " }
+            ],
+            "content": { "bytes": [ 61, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100c0",
+            "mnemonic": "beq\t0x100d0",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x000100c4, 0) " },
+              { "id": 2, "op": "goto (0x000100d0, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100c4",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000100c8, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100c8",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000100cc, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100cc",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 86 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x000100d0;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x000100d0, 0)"
+              }
+            ],
+            "content": { "bytes": [ 134, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100d0",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000100d4, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100d4",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_1",
+        "value": "0x100d8",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000100d8",
+            "mnemonic": "cmp\tr0, #77",
+            "opcode": "e3 50 00 4d ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 77<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 77<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 77<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x000100dc, 0) " }
+            ],
+            "content": { "bytes": [ 77, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100dc",
+            "mnemonic": "beq\t0x100ec",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x000100e0, 0) " },
+              { "id": 2, "op": "goto (0x000100ec, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100e0",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000100e4, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100e4",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000100e8, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100e8",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 7f ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x000100ec;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x000100ec, 0)"
+              }
+            ],
+            "content": { "bytes": [ 127, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100ec",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000100f0, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100f0",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_2",
+        "value": "0x100f4",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000100f4",
+            "mnemonic": "add\tr0, r0, #61",
+            "opcode": "e2 80 00 3d ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> + 61<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000100f8, 0) " }
+            ],
+            "content": { "bytes": [ 61, 0, 128, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100f8",
+            "mnemonic": "lsl\tr0, r0, #1",
+            "opcode": "e1 a0 00 80 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> lsl 1<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000100fc, 0) " }
+            ],
+            "content": { "bytes": [ 128, 0, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000100fc",
+            "mnemonic": "and\tr0, r0, #254",
+            "opcode": "e2 00 00 fe ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (254<32> & r0<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010100, 0) " }
+            ],
+            "content": { "bytes": [ 254, 0, 0, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010100",
+            "mnemonic": "cmp\tr0, #252",
+            "opcode": "e3 50 00 fc ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 252<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 252<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 252<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x00010104, 0) " }
+            ],
+            "content": { "bytes": [ 252, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010104",
+            "mnemonic": "beq\t0x10114",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x00010108, 0) " },
+              { "id": 2, "op": "goto (0x00010114, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010108",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x0001010c, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001010c",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x00010110, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010110",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 75 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010114;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x00010114, 0)"
+              }
+            ],
+            "content": { "bytes": [ 117, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010114",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010118, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010118",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_3",
+        "value": "0x1011c",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x0001011c",
+            "mnemonic": "cmp\tr0, #78",
+            "opcode": "e3 50 00 4e ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 78<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 78<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 78<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x00010120, 0) " }
+            ],
+            "content": { "bytes": [ 78, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010120",
+            "mnemonic": "beq\t0x10130",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x00010124, 0) " },
+              { "id": 2, "op": "goto (0x00010130, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010124",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010128, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010128",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x0001012c, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001012c",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 6e ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010130;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x00010130, 0)"
+              }
+            ],
+            "content": { "bytes": [ 110, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010130",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010134, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010134",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_4",
+        "value": "0x10138",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x00010138",
+            "mnemonic": "eor\tr0, r0, #19",
+            "opcode": "e2 20 00 13 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (19<32> ^ r0<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001013c, 0) " }
+            ],
+            "content": { "bytes": [ 19, 0, 32, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001013c",
+            "mnemonic": "lsl\tr0, r0, #1",
+            "opcode": "e1 a0 00 80 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> lsl 1<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010140, 0) " }
+            ],
+            "content": { "bytes": [ 128, 0, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010140",
+            "mnemonic": "and\tr0, r0, #255",
+            "opcode": "e2 00 00 ff ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (255<32> & r0<32>);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010144, 0) " }
+            ],
+            "content": { "bytes": [ 255, 0, 0, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010144",
+            "mnemonic": "cmp\tr0, #142",
+            "opcode": "e3 50 00 8e ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 142<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 142<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 142<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x00010148, 0) " }
+            ],
+            "content": { "bytes": [ 142, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010148",
+            "mnemonic": "beq\t0x10158",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x0001014c, 0) " },
+              { "id": 2, "op": "goto (0x00010158, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001014c",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010150, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010150",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x00010154, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010154",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 64 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010158;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x00010158, 0)"
+              }
+            ],
+            "content": { "bytes": [ 100, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010158",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x0001015c, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001015c",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_5",
+        "value": "0x10160",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x00010160",
+            "mnemonic": "cmp\tr0, #73",
+            "opcode": "e3 50 00 49 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 73<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 73<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 73<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x00010164, 0) " }
+            ],
+            "content": { "bytes": [ 73, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010164",
+            "mnemonic": "beq\t0x10174",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x00010168, 0) " },
+              { "id": 2, "op": "goto (0x00010174, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010168",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x0001016c, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001016c",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x00010170, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010170",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 5d ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010174;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x00010174, 0)"
+              }
+            ],
+            "content": { "bytes": [ 93, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010174",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010178, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010178",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_6",
+        "value": "0x1017c",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x0001017c",
+            "mnemonic": "cmp\tr0, #67",
+            "opcode": "e3 50 00 43 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 67<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 67<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 67<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x00010180, 0) " }
+            ],
+            "content": { "bytes": [ 67, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010180",
+            "mnemonic": "beq\t0x10190",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x00010184, 0) " },
+              { "id": 2, "op": "goto (0x00010190, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010184",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010188, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010188",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x0001018c, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001018c",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 56 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010190;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x00010190, 0)"
+              }
+            ],
+            "content": { "bytes": [ 86, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010190",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010194, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010194",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_7",
+        "value": "0x10198",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x00010198",
+            "mnemonic": "cmp\tr0, #79",
+            "opcode": "e3 50 00 4f ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 79<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 79<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 79<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x0001019c, 0) " }
+            ],
+            "content": { "bytes": [ 79, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001019c",
+            "mnemonic": "beq\t0x101ac",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x000101a0, 0) " },
+              { "id": 2, "op": "goto (0x000101ac, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101a0",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000101a4, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101a4",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000101a8, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101a8",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 4f ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x000101ac;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x000101ac, 0)"
+              }
+            ],
+            "content": { "bytes": [ 79, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101ac",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000101b0, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101b0",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_8",
+        "value": "0x101b4",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000101b4",
+            "mnemonic": "cmp\tr0, #82",
+            "opcode": "e3 50 00 52 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 82<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 82<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 82<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x000101b8, 0) " }
+            ],
+            "content": { "bytes": [ 82, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101b8",
+            "mnemonic": "beq\t0x101c8",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x000101bc, 0) " },
+              { "id": 2, "op": "goto (0x000101c8, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101bc",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000101c0, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101c0",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000101c4, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101c4",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 48 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x000101c8;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x000101c8, 0)"
+              }
+            ],
+            "content": { "bytes": [ 72, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101c8",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000101cc, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101cc",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_9",
+        "value": "0x101d0",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000101d0",
+            "mnemonic": "cmp\tr0, #69",
+            "opcode": "e3 50 00 45 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r0<32> - 69<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 69<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 69<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x000101d4, 0) " }
+            ],
+            "content": { "bytes": [ 69, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101d4",
+            "mnemonic": "beq\t0x101e4",
+            "opcode": "0a 00 00 02 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x000101d8, 0) " },
+              { "id": 2, "op": "goto (0x000101e4, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101d8",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000101dc, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101dc",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000101e0, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101e0",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb 00 00 41 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x000101e4;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x000101e4, 0)"
+              }
+            ],
+            "content": { "bytes": [ 65, 0, 0, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101e4",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000101e8, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101e8",
+            "mnemonic": "bx\tlr",
+            "opcode": "e1 2f ff 1e ",
+            "code": [
+              { "id": 0, "op": "%%0<1> := lr<32>{0};" },
+              {
+                "id": 1,
+                "op": "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+              },
+              { "id": 2, "op": "t<1> := %%0<1>;" },
+              { "id": 3, "op": "goto %%1<32> " }
+            ],
+            "content": { "bytes": [ 30, 255, 47, 225 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_10",
+        "value": "0x101ec",
+        "content": {
+          "label": "instruction",
+          "address": "0x000101ec",
+          "mnemonic": "b\t0x100bc",
+          "opcode": "ea ff ff b2 ",
+          "code": [ { "id": 0, "op": "goto (0x000100bc, 0) " } ],
+          "content": { "bytes": [ 178, 255, 255, 234 ], "size": 4 }
+        }
+      },
+      {
+        "label": "symbol",
+        "name": "check",
+        "value": "0x101f0",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000101f0",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000101f4, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101f4",
+            "mnemonic": "mov\tr4, r0",
+            "opcode": "e1 a0 40 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r0<32>;" },
+              { "id": 1, "op": "r4<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000101f8, 0) " }
+            ],
+            "content": { "bytes": [ 0, 64, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101f8",
+            "mnemonic": "ldrb\tr0, [r0, #0]",
+            "opcode": "e5 d0 00 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (uext32 @[r0<32>,<-,1]);" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000101fc, 0) " }
+            ],
+            "content": { "bytes": [ 0, 0, 208, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000101fc",
+            "mnemonic": "bl\t0x100bc",
+            "opcode": "eb ff ff ae ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010200;" },
+              {
+                "id": 1,
+                "op": "goto (0x000100bc, 0) #call with return address @ (0x00010200, 0)"
+              }
+            ],
+            "content": { "bytes": [ 174, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010200",
+            "mnemonic": "ldrb\tr0, [r4, #1]",
+            "opcode": "e5 d4 00 01 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 1<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010204, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010204",
+            "mnemonic": "bl\t0x100d8",
+            "opcode": "eb ff ff b3 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010208;" },
+              {
+                "id": 1,
+                "op": "goto (0x000100d8, 0) #call with return address @ (0x00010208, 0)"
+              }
+            ],
+            "content": { "bytes": [ 179, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010208",
+            "mnemonic": "ldrb\tr0, [r4, #2]",
+            "opcode": "e5 d4 00 02 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 2<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001020c, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001020c",
+            "mnemonic": "bl\t0x100f4",
+            "opcode": "eb ff ff b8 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010210;" },
+              {
+                "id": 1,
+                "op": "goto (0x000100f4, 0) #call with return address @ (0x00010210, 0)"
+              }
+            ],
+            "content": { "bytes": [ 184, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010210",
+            "mnemonic": "ldrb\tr0, [r4, #3]",
+            "opcode": "e5 d4 00 03 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 3<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010214, 0) " }
+            ],
+            "content": { "bytes": [ 3, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010214",
+            "mnemonic": "bl\t0x1011c",
+            "opcode": "eb ff ff c0 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010218;" },
+              {
+                "id": 1,
+                "op": "goto (0x0001011c, 0) #call with return address @ (0x00010218, 0)"
+              }
+            ],
+            "content": { "bytes": [ 192, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010218",
+            "mnemonic": "ldrb\tr0, [r4, #4]",
+            "opcode": "e5 d4 00 04 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 4<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001021c, 0) " }
+            ],
+            "content": { "bytes": [ 4, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001021c",
+            "mnemonic": "bl\t0x10138",
+            "opcode": "eb ff ff c5 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010220;" },
+              {
+                "id": 1,
+                "op": "goto (0x00010138, 0) #call with return address @ (0x00010220, 0)"
+              }
+            ],
+            "content": { "bytes": [ 197, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010220",
+            "mnemonic": "ldrb\tr0, [r4, #5]",
+            "opcode": "e5 d4 00 05 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 5<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010224, 0) " }
+            ],
+            "content": { "bytes": [ 5, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010224",
+            "mnemonic": "bl\t0x10160",
+            "opcode": "eb ff ff cd ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010228;" },
+              {
+                "id": 1,
+                "op": "goto (0x00010160, 0) #call with return address @ (0x00010228, 0)"
+              }
+            ],
+            "content": { "bytes": [ 205, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010228",
+            "mnemonic": "ldrb\tr0, [r4, #6]",
+            "opcode": "e5 d4 00 06 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 6<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001022c, 0) " }
+            ],
+            "content": { "bytes": [ 6, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001022c",
+            "mnemonic": "bl\t0x1017c",
+            "opcode": "eb ff ff d2 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010230;" },
+              {
+                "id": 1,
+                "op": "goto (0x0001017c, 0) #call with return address @ (0x00010230, 0)"
+              }
+            ],
+            "content": { "bytes": [ 210, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010230",
+            "mnemonic": "ldrb\tr0, [r4, #7]",
+            "opcode": "e5 d4 00 07 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 7<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010234, 0) " }
+            ],
+            "content": { "bytes": [ 7, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010234",
+            "mnemonic": "bl\t0x10198",
+            "opcode": "eb ff ff d7 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010238;" },
+              {
+                "id": 1,
+                "op": "goto (0x00010198, 0) #call with return address @ (0x00010238, 0)"
+              }
+            ],
+            "content": { "bytes": [ 215, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010238",
+            "mnemonic": "ldrb\tr0, [r4, #8]",
+            "opcode": "e5 d4 00 08 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 8<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001023c, 0) " }
+            ],
+            "content": { "bytes": [ 8, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001023c",
+            "mnemonic": "bl\t0x101b4",
+            "opcode": "eb ff ff dc ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010240;" },
+              {
+                "id": 1,
+                "op": "goto (0x000101b4, 0) #call with return address @ (0x00010240, 0)"
+              }
+            ],
+            "content": { "bytes": [ 220, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010240",
+            "mnemonic": "ldrb\tr0, [r4, #9]",
+            "opcode": "e5 d4 00 09 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 9<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010244, 0) " }
+            ],
+            "content": { "bytes": [ 9, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010244",
+            "mnemonic": "bl\t0x101d0",
+            "opcode": "eb ff ff e1 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010248;" },
+              {
+                "id": 1,
+                "op": "goto (0x000101d0, 0) #call with return address @ (0x00010248, 0)"
+              }
+            ],
+            "content": { "bytes": [ 225, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010248",
+            "mnemonic": "ldrb\tr0, [r4, #10]",
+            "opcode": "e5 d4 00 0a ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r4<32> + 10<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001024c, 0) " }
+            ],
+            "content": { "bytes": [ 10, 0, 212, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001024c",
+            "mnemonic": "bl\t0x100bc",
+            "opcode": "eb ff ff 9a ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010250;" },
+              {
+                "id": 1,
+                "op": "goto (0x000100bc, 0) #call with return address @ (0x00010250, 0)"
+              }
+            ],
+            "content": { "bytes": [ 154, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010250",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x00010254, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010254",
+            "mnemonic": "ldmia\tsp!, {r4, pc}",
+            "opcode": "e8 bd 80 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[(sp<32> + 4<32>),<-,4];" },
+              { "id": 1, "op": "%%1<1> := %%0<32>{0};" },
+              { "id": 2, "op": "%%2<32> := @[sp<32>,<-,4];" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + 8<32>);" },
+              {
+                "id": 4,
+                "op": "%%4<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+              },
+              { "id": 5, "op": "sp<32> := %%3<32>;" },
+              { "id": 6, "op": "r4<32> := %%2<32>;" },
+              { "id": 7, "op": "t<1> := %%1<1>;" },
+              { "id": 8, "op": "goto %%4<32> " }
+            ],
+            "content": { "bytes": [ 16, 128, 189, 232 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "fgets",
+        "value": "0x10258",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x00010258",
+            "mnemonic": "stmdb\tsp!, {r4, r5, r6, r7, lr}",
+            "opcode": "e9 2d 40 f0 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -20<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := r5<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -16<32>);" },
+              { "id": 4, "op": "%%4<32> := r6<32>;" },
+              { "id": 5, "op": "%%5<32> := (sp<32> + -12<32>);" },
+              { "id": 6, "op": "%%6<32> := r7<32>;" },
+              { "id": 7, "op": "%%7<32> := (sp<32> + -8<32>);" },
+              { "id": 8, "op": "%%8<32> := lr<32>;" },
+              { "id": 9, "op": "%%9<32> := (sp<32> + -4<32>);" },
+              { "id": 10, "op": "@[%%9<32>,<-,4] := %%8<32>;" },
+              { "id": 11, "op": "@[%%7<32>,<-,4] := %%6<32>;" },
+              { "id": 12, "op": "@[%%5<32>,<-,4] := %%4<32>;" },
+              { "id": 13, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 14, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 15, "op": "sp<32> := %%0<32>;" },
+              { "id": 16, "op": "goto (0x0001025c, 0) " }
+            ],
+            "content": { "bytes": [ 240, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001025c",
+            "mnemonic": "mov\tr3, r0",
+            "opcode": "e1 a0 30 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r0<32>;" },
+              { "id": 1, "op": "r3<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010260, 0) " }
+            ],
+            "content": { "bytes": [ 0, 48, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010260",
+            "mnemonic": "mov\tlr, r1",
+            "opcode": "e1 a0 e0 01 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r1<32>;" },
+              { "id": 1, "op": "lr<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010264, 0) " }
+            ],
+            "content": { "bytes": [ 1, 224, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010264",
+            "mnemonic": "mov\tr4, r2",
+            "opcode": "e1 a0 40 02 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r2<32>;" },
+              { "id": 1, "op": "r4<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010268, 0) " }
+            ],
+            "content": { "bytes": [ 2, 64, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010268",
+            "mnemonic": "mov\tip, r0",
+            "opcode": "e1 a0 c0 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r0<32>;" },
+              { "id": 1, "op": "ip<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001026c, 0) " }
+            ],
+            "content": { "bytes": [ 0, 192, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001026c",
+            "mnemonic": "rsb\tr6, r0, #1",
+            "opcode": "e2 60 60 01 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (1<32> - r0<32>);" },
+              { "id": 1, "op": "r6<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010270, 0) " }
+            ],
+            "content": { "bytes": [ 1, 96, 96, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010270",
+            "mnemonic": "add\tr2, r6, ip",
+            "opcode": "e0 86 20 0c ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r6<32> + ip<32>);" },
+              { "id": 1, "op": "r2<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010274, 0) " }
+            ],
+            "content": { "bytes": [ 12, 32, 134, 224 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010274",
+            "mnemonic": "cmp\tlr, r2",
+            "opcode": "e1 5e 00 02 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (lr<32> - r2<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (lr<32> >=u r2<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (lr<32> <s r2<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x00010278, 0) " }
+            ],
+            "content": { "bytes": [ 2, 0, 94, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010278",
+            "mnemonic": "mov\tr5, ip",
+            "opcode": "e1 a0 50 0c ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := ip<32>;" },
+              { "id": 1, "op": "r5<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x0001027c, 0) " }
+            ],
+            "content": { "bytes": [ 12, 80, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001027c",
+            "mnemonic": "ble\t0x102ac",
+            "opcode": "da 00 00 0a ",
+            "code": [
+              {
+                "id": 0,
+                "op": "if (z<1> | (n<1> ^ v<1>)) goto 2 else goto 1"
+              },
+              { "id": 1, "op": "goto (0x00010280, 0) " },
+              { "id": 2, "op": "goto (0x000102ac, 0) " }
+            ],
+            "content": { "bytes": [ 10, 0, 0, 218 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010280",
+            "mnemonic": "mov\tr0, r4",
+            "opcode": "e1 a0 00 04 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r4<32>;" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010284, 0) " }
+            ],
+            "content": { "bytes": [ 4, 0, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010284",
+            "mnemonic": "mov\tr1, ip",
+            "opcode": "e1 a0 10 0c ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := ip<32>;" },
+              { "id": 1, "op": "r1<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x00010288, 0) " }
+            ],
+            "content": { "bytes": [ 12, 16, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010288",
+            "mnemonic": "mov\tr2, #1",
+            "opcode": "e3 a0 20 01 ",
+            "code": [
+              { "id": 0, "op": "r2<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x0001028c, 0) " }
+            ],
+            "content": { "bytes": [ 1, 32, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001028c",
+            "mnemonic": "mov\tr7, #3",
+            "opcode": "e3 a0 70 03 ",
+            "code": [
+              { "id": 0, "op": "r7<32> := 3<32>;" },
+              { "id": 1, "op": "goto (0x00010290, 0) " }
+            ],
+            "content": { "bytes": [ 3, 112, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010290",
+            "mnemonic": "swi\t#0",
+            "opcode": "ef 00 00 00 ",
+            "code": [ { "id": 0, "op": "#unsupported swi#0" } ],
+            "content": { "bytes": [ 0, 0, 0, 239 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010294",
+            "mnemonic": "cmp\tr0, #0",
+            "opcode": "e3 50 00 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r0<32>;" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r0<32> >=u 0<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r0<32> <s 0<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x00010298, 0) " }
+            ],
+            "content": { "bytes": [ 0, 0, 80, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010298",
+            "mnemonic": "beq\t0x102ac",
+            "opcode": "0a 00 00 03 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x0001029c, 0) " },
+              { "id": 2, "op": "goto (0x000102ac, 0) " }
+            ],
+            "content": { "bytes": [ 3, 0, 0, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x0001029c",
+            "mnemonic": "ldrb\tr2, [r5, #0]",
+            "opcode": "e5 d5 20 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (uext32 @[r5<32>,<-,1]);" },
+              { "id": 1, "op": "r2<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000102a0, 0) " }
+            ],
+            "content": { "bytes": [ 0, 32, 213, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102a0",
+            "mnemonic": "add\tip, ip, #1",
+            "opcode": "e2 8c c0 01 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (ip<32> + 1<32>);" },
+              { "id": 1, "op": "ip<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000102a4, 0) " }
+            ],
+            "content": { "bytes": [ 1, 192, 140, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102a4",
+            "mnemonic": "cmp\tr2, #10",
+            "opcode": "e3 52 00 0a ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r2<32> - 10<32>);" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r2<32> >=u 10<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r2<32> <s 10<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x000102a8, 0) " }
+            ],
+            "content": { "bytes": [ 10, 0, 82, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102a8",
+            "mnemonic": "bne\t0x10270",
+            "opcode": "1a ff ff f0 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x00010270, 0) " },
+              { "id": 2, "op": "goto (0x000102ac, 0) " }
+            ],
+            "content": { "bytes": [ 240, 255, 255, 26 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102ac",
+            "mnemonic": "mov\tr2, #0",
+            "opcode": "e3 a0 20 00 ",
+            "code": [
+              { "id": 0, "op": "r2<32> := 0<32>;" },
+              { "id": 1, "op": "goto (0x000102b0, 0) " }
+            ],
+            "content": { "bytes": [ 0, 32, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102b0",
+            "mnemonic": "mov\tr0, r3",
+            "opcode": "e1 a0 00 03 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r3<32>;" },
+              { "id": 1, "op": "r0<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000102b4, 0) " }
+            ],
+            "content": { "bytes": [ 3, 0, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102b4",
+            "mnemonic": "strb\tr2, [r5, #0]",
+            "opcode": "e5 c5 20 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<8> := r2<32>{7..0};" },
+              { "id": 1, "op": "%%1<32> := r5<32>;" },
+              { "id": 2, "op": "@[%%1<32>,<-,1] := %%0<8>;" },
+              { "id": 3, "op": "goto (0x000102b8, 0) " }
+            ],
+            "content": { "bytes": [ 0, 32, 197, 229 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102b8",
+            "mnemonic": "ldmia\tsp!, {r4, r5, r6, r7, pc}",
+            "opcode": "e8 bd 80 f0 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[(sp<32> + 16<32>),<-,4];" },
+              { "id": 1, "op": "%%1<1> := %%0<32>{0};" },
+              { "id": 2, "op": "%%2<32> := @[sp<32>,<-,4];" },
+              { "id": 3, "op": "%%3<32> := @[(sp<32> + 4<32>),<-,4];" },
+              { "id": 4, "op": "%%4<32> := @[(sp<32> + 8<32>),<-,4];" },
+              { "id": 5, "op": "%%5<32> := @[(sp<32> + 12<32>),<-,4];" },
+              { "id": 6, "op": "%%6<32> := (sp<32> + 20<32>);" },
+              {
+                "id": 7,
+                "op": "%%7<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+              },
+              { "id": 8, "op": "sp<32> := %%6<32>;" },
+              { "id": 9, "op": "r7<32> := %%5<32>;" },
+              { "id": 10, "op": "r6<32> := %%4<32>;" },
+              { "id": 11, "op": "r5<32> := %%3<32>;" },
+              { "id": 12, "op": "r4<32> := %%2<32>;" },
+              { "id": 13, "op": "t<1> := %%1<1>;" },
+              { "id": 14, "op": "goto %%7<32> " }
+            ],
+            "content": { "bytes": [ 240, 128, 189, 232 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "puts",
+        "value": "0x102bc",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000102bc",
+            "mnemonic": "mov\tr1, r0",
+            "opcode": "e1 a0 10 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r0<32>;" },
+              { "id": 1, "op": "r1<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000102c0, 0) " }
+            ],
+            "content": { "bytes": [ 0, 16, 160, 225 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102c0",
+            "mnemonic": "mov\tr2, #0",
+            "opcode": "e3 a0 20 00 ",
+            "code": [
+              { "id": 0, "op": "r2<32> := 0<32>;" },
+              { "id": 1, "op": "goto (0x000102c4, 0) " }
+            ],
+            "content": { "bytes": [ 0, 32, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102c4",
+            "mnemonic": "stmdb\tsp!, {r7, lr}",
+            "opcode": "e9 2d 40 80 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r7<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000102c8, 0) " }
+            ],
+            "content": { "bytes": [ 128, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102c8",
+            "mnemonic": "ldrb\tr3, [r1, r2]",
+            "opcode": "e7 d1 30 02 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "%%0<32> := (uext32 @[(r1<32> + r2<32>),<-,1]);"
+              },
+              { "id": 1, "op": "r3<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000102cc, 0) " }
+            ],
+            "content": { "bytes": [ 2, 48, 209, 231 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102cc",
+            "mnemonic": "cmp\tr3, #0",
+            "opcode": "e3 53 00 00 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := r3<32>;" },
+              { "id": 1, "op": "%%1<1> := (%%0<32> <s 0<32>);" },
+              { "id": 2, "op": "%%2<1> := (0<32> = %%0<32>);" },
+              { "id": 3, "op": "%%3<1> := (r3<32> >=u 0<32>);" },
+              { "id": 4, "op": "%%4<1> := (%%1<1> ^ (r3<32> <s 0<32>));" },
+              { "id": 5, "op": "v<1> := %%4<1>;" },
+              { "id": 6, "op": "c<1> := %%3<1>;" },
+              { "id": 7, "op": "z<1> := %%2<1>;" },
+              { "id": 8, "op": "n<1> := %%1<1>;" },
+              { "id": 9, "op": "goto (0x000102d0, 0) " }
+            ],
+            "content": { "bytes": [ 0, 0, 83, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102d0",
+            "mnemonic": "bne\t0x102e4",
+            "opcode": "1a 00 00 03 ",
+            "code": [
+              { "id": 0, "op": "if z<1> goto 2 else goto 1" },
+              { "id": 1, "op": "goto (0x000102e4, 0) " },
+              { "id": 2, "op": "goto (0x000102d4, 0) " }
+            ],
+            "content": { "bytes": [ 3, 0, 0, 26 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102d4",
+            "mnemonic": "mov\tr0, #1",
+            "opcode": "e3 a0 00 01 ",
+            "code": [
+              { "id": 0, "op": "r0<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000102d8, 0) " }
+            ],
+            "content": { "bytes": [ 1, 0, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102d8",
+            "mnemonic": "mov\tr7, #4",
+            "opcode": "e3 a0 70 04 ",
+            "code": [
+              { "id": 0, "op": "r7<32> := 4<32>;" },
+              { "id": 1, "op": "goto (0x000102dc, 0) " }
+            ],
+            "content": { "bytes": [ 4, 112, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102dc",
+            "mnemonic": "swi\t#0",
+            "opcode": "ef 00 00 00 ",
+            "code": [ { "id": 0, "op": "#unsupported swi#0" } ],
+            "content": { "bytes": [ 0, 0, 0, 239 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102e0",
+            "mnemonic": "ldmia\tsp!, {r7, pc}",
+            "opcode": "e8 bd 80 80 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := @[(sp<32> + 4<32>),<-,4];" },
+              { "id": 1, "op": "%%1<1> := %%0<32>{0};" },
+              { "id": 2, "op": "%%2<32> := @[sp<32>,<-,4];" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + 8<32>);" },
+              {
+                "id": 4,
+                "op": "%%4<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+              },
+              { "id": 5, "op": "sp<32> := %%3<32>;" },
+              { "id": 6, "op": "r7<32> := %%2<32>;" },
+              { "id": 7, "op": "t<1> := %%1<1>;" },
+              { "id": 8, "op": "goto %%4<32> " }
+            ],
+            "content": { "bytes": [ 128, 128, 189, 232 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102e4",
+            "mnemonic": "add\tr2, r2, #1",
+            "opcode": "e2 82 20 01 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (r2<32> + 1<32>);" },
+              { "id": 1, "op": "r2<32> := %%0<32>;" },
+              { "id": 2, "op": "goto (0x000102e8, 0) " }
+            ],
+            "content": { "bytes": [ 1, 32, 130, 226 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102e8",
+            "mnemonic": "b\t0x102c8",
+            "opcode": "ea ff ff f6 ",
+            "code": [ { "id": 0, "op": "goto (0x000102c8, 0) " } ],
+            "content": { "bytes": [ 246, 255, 255, 234 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "exit",
+        "value": "0x102ec",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000102ec",
+            "mnemonic": "stmdb\tsp!, {r7, lr}",
+            "opcode": "e9 2d 40 80 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r7<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000102f0, 0) " }
+            ],
+            "content": { "bytes": [ 128, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102f0",
+            "mnemonic": "mov\tr7, #1",
+            "opcode": "e3 a0 70 01 ",
+            "code": [
+              { "id": 0, "op": "r7<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x000102f4, 0) " }
+            ],
+            "content": { "bytes": [ 1, 112, 160, 227 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102f4",
+            "mnemonic": "swi\t#0",
+            "opcode": "ef 00 00 00 ",
+            "code": [ { "id": 0, "op": "#unsupported swi#0" } ],
+            "content": { "bytes": [ 0, 0, 0, 239 ], "size": 4 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "_start",
+        "value": "0x102f8",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x000102f8",
+            "mnemonic": "stmdb\tsp!, {r4, lr}",
+            "opcode": "e9 2d 40 10 ",
+            "code": [
+              { "id": 0, "op": "%%0<32> := (sp<32> + -8<32>);" },
+              { "id": 1, "op": "%%1<32> := r4<32>;" },
+              { "id": 2, "op": "%%2<32> := lr<32>;" },
+              { "id": 3, "op": "%%3<32> := (sp<32> + -4<32>);" },
+              { "id": 4, "op": "@[%%3<32>,<-,4] := %%2<32>;" },
+              { "id": 5, "op": "@[%%0<32>,<-,4] := %%1<32>;" },
+              { "id": 6, "op": "sp<32> := %%0<32>;" },
+              { "id": 7, "op": "goto (0x000102fc, 0) " }
+            ],
+            "content": { "bytes": [ 16, 64, 45, 233 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x000102fc",
+            "mnemonic": "bl\t0x10074",
+            "opcode": "eb ff ff 5c ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010300;" },
+              {
+                "id": 1,
+                "op": "goto (0x00010074, 0) #call with return address @ (0x00010300, 0)"
+              }
+            ],
+            "content": { "bytes": [ 92, 255, 255, 235 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x00010300",
+            "mnemonic": "bl\t0x102ec",
+            "opcode": "eb ff ff f9 ",
+            "code": [
+              { "id": 0, "op": "lr<32> := 0x00010304;" },
+              {
+                "id": 1,
+                "op": "goto (0x000102ec, 0) #call with return address @ (0x00010304, 0)"
+              }
+            ],
+            "content": { "bytes": [ 249, 255, 255, 235 ], "size": 4 }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "section",
+    "type": "PROGBITS",
+    "name": ".rodata",
+    "flags": "r--",
+    "content": [
+      {
+        "label": "string",
+        "string": "Enter code:\n",
+        "content": {
+          "bytes": [
+            69, 110, 116, 101, 114, 32, 99, 111, 100, 101, 58, 10, 0
+          ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "Success!\n",
+        "content": {
+          "bytes": [ 83, 117, 99, 99, 101, 115, 115, 33, 10, 0 ],
+          "size": 10
+        }
+      }
+    ]
+  },
+  {
+    "label": "section",
+    "type": "PROC(70000003)",
+    "name": ".ARM.attributes",
+    "flags": "---",
+    "content": {
+      "bytes": [
+        65, 41, 0, 0, 0, 97, 101, 97, 98, 105, 0, 1, 31, 0, 0, 0, 5, 53, 84,
+        0, 6, 3, 8, 1, 9, 1, 18, 4, 20, 1, 21, 1, 23, 3, 24, 1, 25, 1, 26, 2,
+        30, 4
+      ],
+      "size": 42
+    }
+  },
+  { "bytes": [ 0, 0, 0 ], "size": 3 },
+  {
+    "label": "section",
+    "type": "SYMTAB",
+    "name": ".symtab",
+    "flags": "---",
+    "content": {
+      "bytes": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 116, 0,
+        1, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 4, 3, 1, 0, 0, 0, 0, 0, 3,
+        0, 2, 0, 0, 0, 0, 0, 28, 3, 2, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 4, 0, 1, 0, 0, 0, 152, 1, 1, 0, 28, 0,
+        0, 0, 18, 0, 1, 0, 14, 0, 0, 0, 88, 2, 1, 0, 100, 0, 0, 0, 18, 0, 1,
+        0, 20, 0, 0, 0, 188, 2, 1, 0, 48, 0, 0, 0, 18, 0, 1, 0, 25, 0, 0, 0,
+        56, 1, 1, 0, 40, 0, 0, 0, 18, 0, 1, 0, 38, 0, 0, 0, 236, 1, 1, 0, 4,
+        0, 0, 0, 18, 0, 1, 0, 52, 0, 0, 0, 208, 1, 1, 0, 28, 0, 0, 0, 18, 0,
+        1, 0, 65, 0, 0, 0, 244, 0, 1, 0, 40, 0, 0, 0, 18, 0, 1, 0, 78, 0, 0,
+        0, 188, 0, 1, 0, 28, 0, 0, 0, 18, 0, 1, 0, 91, 0, 0, 0, 240, 1, 1, 0,
+        104, 0, 0, 0, 18, 0, 1, 0, 97, 0, 0, 0, 248, 2, 1, 0, 12, 0, 0, 0,
+        18, 0, 1, 0, 104, 0, 0, 0, 124, 1, 1, 0, 28, 0, 0, 0, 18, 0, 1, 0,
+        117, 0, 0, 0, 28, 1, 1, 0, 28, 0, 0, 0, 18, 0, 1, 0, 130, 0, 0, 0,
+        116, 0, 1, 0, 72, 0, 0, 0, 18, 0, 1, 0, 135, 0, 0, 0, 216, 0, 1, 0,
+        28, 0, 0, 0, 18, 0, 1, 0, 148, 0, 0, 0, 180, 1, 1, 0, 28, 0, 0, 0,
+        18, 0, 1, 0, 161, 0, 0, 0, 96, 1, 1, 0, 28, 0, 0, 0, 18, 0, 1, 0,
+        174, 0, 0, 0, 236, 2, 1, 0, 12, 0, 0, 0, 18, 0, 1, 0
+      ],
+      "size": 352
+    }
+  },
+  {
+    "label": "section",
+    "type": "STRTAB",
+    "name": ".strtab",
+    "flags": "---",
+    "content": [
+      {
+        "label": "string",
+        "string": "",
+        "content": { "bytes": [ 0 ], "size": 1 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_7",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 55, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "fgets",
+        "content": { "bytes": [ 102, 103, 101, 116, 115, 0 ], "size": 6 }
+      },
+      {
+        "label": "string",
+        "string": "puts",
+        "content": { "bytes": [ 112, 117, 116, 115, 0 ], "size": 5 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_4",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 52, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_10",
+        "content": {
+          "bytes": [
+            99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 49, 48, 0
+          ],
+          "size": 14
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_9",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 57, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_2",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 50, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_0",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 48, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check",
+        "content": { "bytes": [ 99, 104, 101, 99, 107, 0 ], "size": 6 }
+      },
+      {
+        "label": "string",
+        "string": "_start",
+        "content": { "bytes": [ 95, 115, 116, 97, 114, 116, 0 ], "size": 7 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_6",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 54, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_3",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 51, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "main",
+        "content": { "bytes": [ 109, 97, 105, 110, 0 ], "size": 5 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_1",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 49, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_8",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 56, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_5",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 53, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "exit",
+        "content": { "bytes": [ 101, 120, 105, 116, 0 ], "size": 5 }
+      }
+    ]
+  },
+  {
+    "label": "section",
+    "type": "STRTAB",
+    "name": ".shstrtab",
+    "flags": "---",
+    "content": [
+      {
+        "label": "string",
+        "string": "",
+        "content": { "bytes": [ 0 ], "size": 1 }
+      },
+      {
+        "label": "string",
+        "string": ".symtab",
+        "content": {
+          "bytes": [ 46, 115, 121, 109, 116, 97, 98, 0 ],
+          "size": 8
+        }
+      },
+      {
+        "label": "string",
+        "string": ".strtab",
+        "content": {
+          "bytes": [ 46, 115, 116, 114, 116, 97, 98, 0 ],
+          "size": 8
+        }
+      },
+      {
+        "label": "string",
+        "string": ".shstrtab",
+        "content": {
+          "bytes": [ 46, 115, 104, 115, 116, 114, 116, 97, 98, 0 ],
+          "size": 10
+        }
+      },
+      {
+        "label": "string",
+        "string": ".text",
+        "content": { "bytes": [ 46, 116, 101, 120, 116, 0 ], "size": 6 }
+      },
+      {
+        "label": "string",
+        "string": ".rodata",
+        "content": {
+          "bytes": [ 46, 114, 111, 100, 97, 116, 97, 0 ],
+          "size": 8
+        }
+      },
+      {
+        "label": "string",
+        "string": ".bss",
+        "content": { "bytes": [ 46, 98, 115, 115, 0 ], "size": 5 }
+      },
+      {
+        "label": "string",
+        "string": ".ARM.attributes",
+        "content": {
+          "bytes": [
+            46, 65, 82, 77, 46, 97, 116, 116, 114, 105, 98, 117, 116, 101,
+            115, 0
+          ],
+          "size": 16
+        }
+      }
+    ]
+  },
+  { "bytes": [ 0, 0, 0 ], "size": 3 },
+  {
+    "label": "header",
+    "name": "section-header",
+    "content": {
+      "bytes": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 0, 0, 0, 1, 0,
+        0, 0, 6, 0, 0, 0, 116, 0, 1, 0, 116, 0, 0, 0, 144, 2, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 1, 0, 0, 0, 50,
+        0, 0, 0, 4, 3, 1, 0, 4, 3, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 1, 0, 0, 0, 41, 0, 0, 0, 8, 0, 0, 0, 3, 0, 0, 0, 28, 3,
+        2, 0, 27, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0,
+        0, 0, 0, 46, 0, 0, 0, 3, 0, 0, 112, 0, 0, 0, 0, 0, 0, 0, 0, 27, 3, 0,
+        0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 72, 3, 0, 0, 96, 1, 0, 0,
+        6, 0, 0, 0, 5, 0, 0, 0, 4, 0, 0, 0, 16, 0, 0, 0, 9, 0, 0, 0, 3, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 168, 4, 0, 0, 179, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 91, 5, 0, 0, 62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 0
+      ],
+      "size": 320
+    }
+  }
+]

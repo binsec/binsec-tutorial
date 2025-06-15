@@ -1,0 +1,4029 @@
+[
+  {
+    "label": "header",
+    "name": "elf-header",
+    "content": [
+      {
+        "label": "magic",
+        "string": "ELF",
+        "content": { "bytes": [ 127, 69, 76, 70 ], "size": 4 }
+      },
+      {
+        "bytes": [
+          1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 0, 1, 0, 0, 0, 2, 131,
+          4, 8, 52, 0, 0, 0, 48, 5, 0, 0, 0, 0, 0, 0, 52, 0, 32, 0, 2, 0, 40,
+          0, 7, 0, 6, 0
+        ],
+        "size": 48
+      }
+    ]
+  },
+  {
+    "label": "header",
+    "name": "program-header",
+    "content": {
+      "bytes": [
+        1, 0, 0, 0, 116, 0, 0, 0, 116, 128, 4, 8, 116, 128, 4, 8, 184, 2, 0,
+        0, 188, 18, 0, 0, 7, 0, 0, 0, 4, 0, 0, 0, 81, 229, 116, 100, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 16, 0,
+        0, 0
+      ],
+      "size": 64
+    }
+  },
+  {
+    "label": "section",
+    "type": "PROGBITS",
+    "name": ".text",
+    "flags": "r-x",
+    "content": [
+      {
+        "label": "symbol",
+        "name": "main",
+        "value": "0x8048074",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x8048074",
+            "mnemonic": "lea ecx, [esp + 0x4]",
+            "opcode": "8d 4c 24 04 ",
+            "code": [
+              { "id": 0, "op": "ecx<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto (0x8048078, 0) " }
+            ],
+            "content": { "bytes": [ 141, 76, 36, 4 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048078",
+            "mnemonic": "and esp, 0xfffffff0",
+            "opcode": "83 e4 f0 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (-16<32> & esp<32>);" },
+              { "id": 1, "op": "OF<1> := 0<1>;" },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := 0<1>;" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := 0<1>;" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x804807b, 0) " }
+            ],
+            "content": { "bytes": [ 131, 228, 240 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804807b",
+            "mnemonic": "push [ecx + 0xfffffffc]",
+            "opcode": "ff 71 fc ",
+            "code": [
+              {
+                "id": 0,
+                "op": "@[(esp<32> - 4<32>),<-,4] := @[(ecx<32> + -4<32>),<-,4];"
+              },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804807e, 0) " }
+            ],
+            "content": { "bytes": [ 255, 113, 252 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804807e",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804807f, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804807f",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x8048081, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048081",
+            "mnemonic": "push ebx",
+            "opcode": "53 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048082, 0) " }
+            ],
+            "content": { "bytes": [ 83 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048082",
+            "mnemonic": "push ecx",
+            "opcode": "51 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ecx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048083, 0) " }
+            ],
+            "content": { "bytes": [ 81 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048083",
+            "mnemonic": "lea ebx, [ebp + 0xffffffec]",
+            "opcode": "8d 5d ec ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := (ebp<32> + -20<32>);" },
+              { "id": 1, "op": "goto (0x8048086, 0) " }
+            ],
+            "content": { "bytes": [ 141, 93, 236 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048086",
+            "mnemonic": "sub esp, 0x1c",
+            "opcode": "83 ec 1c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 28<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 28<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048089, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 28 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048089",
+            "mnemonic": "push 0x8048315",
+            "opcode": "68 15 83 04 08 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 0x08048315;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804808e, 0) " }
+            ],
+            "content": { "bytes": [ 104, 21, 131, 4, 8 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804808e",
+            "mnemonic": "call 0x80482d3",
+            "opcode": "e8 40 02 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048093;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482d3, 0) #call with return address @ (0x8048093, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 64, 2, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048093",
+            "mnemonic": "add esp, 0xc",
+            "opcode": "83 c4 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> + 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (! (esp<32>{31}) & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := ((uext5 esp<32>{3..0}) + 12<5>){4};"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := ((uext33 esp<32>) + 12<33>){32};" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048096, 0) " }
+            ],
+            "content": { "bytes": [ 131, 196, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048096",
+            "mnemonic": "push [0x804932c]",
+            "opcode": "ff 35 2c 93 04 08 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "@[(esp<32> - 4<32>),<-,4] := @[0x0804932c,<-,4];"
+              },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804809c, 0) " }
+            ],
+            "content": { "bytes": [ 255, 53, 44, 147, 4, 8 ], "size": 6 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804809c",
+            "mnemonic": "push 0xc",
+            "opcode": "6a 0c ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 12<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804809e, 0) " }
+            ],
+            "content": { "bytes": [ 106, 12 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804809e",
+            "mnemonic": "push ebx",
+            "opcode": "53 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804809f, 0) " }
+            ],
+            "content": { "bytes": [ 83 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804809f",
+            "mnemonic": "call 0x804828b",
+            "opcode": "e8 e7 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080480a4;" },
+              {
+                "id": 2,
+                "op": "goto (0x804828b, 0) #call with return address @ (0x80480a4, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 231, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480a4",
+            "mnemonic": "mov [esp], ebx",
+            "opcode": "89 1c 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := ebx<32>;" },
+              { "id": 1, "op": "goto (0x80480a7, 0) " }
+            ],
+            "content": { "bytes": [ 137, 28, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480a7",
+            "mnemonic": "call 0x80481f3",
+            "opcode": "e8 47 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080480ac;" },
+              {
+                "id": 2,
+                "op": "goto (0x80481f3, 0) #call with return address @ (0x80480ac, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 71, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480ac",
+            "mnemonic": "mov [esp], 0x8048322",
+            "opcode": "c7 04 24 22 83 04 08 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := 0x08048322;" },
+              { "id": 1, "op": "goto (0x80480b3, 0) " }
+            ],
+            "content": { "bytes": [ 199, 4, 36, 34, 131, 4, 8 ], "size": 7 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480b3",
+            "mnemonic": "call 0x80482d3",
+            "opcode": "e8 1b 02 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080480b8;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482d3, 0) #call with return address @ (0x80480b8, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 27, 2, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480b8",
+            "mnemonic": "lea esp, [ebp + 0xfffffff8]",
+            "opcode": "8d 65 f8 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (ebp<32> + -8<32>);" },
+              { "id": 1, "op": "goto (0x80480bb, 0) " }
+            ],
+            "content": { "bytes": [ 141, 101, 248 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480bb",
+            "mnemonic": "xor eax, eax",
+            "opcode": "31 c0 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := 0<32>;" },
+              { "id": 1, "op": "OF<1> := 0<1>;" },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := 0<1>;" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := 0<1>;" },
+              { "id": 7, "op": "eax<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80480bd, 0) " }
+            ],
+            "content": { "bytes": [ 49, 192 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480bd",
+            "mnemonic": "pop ecx",
+            "opcode": "59 ",
+            "code": [
+              { "id": 0, "op": "ecx<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80480be, 0) " }
+            ],
+            "content": { "bytes": [ 89 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480be",
+            "mnemonic": "pop ebx",
+            "opcode": "5b ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80480bf, 0) " }
+            ],
+            "content": { "bytes": [ 91 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480bf",
+            "mnemonic": "pop ebp",
+            "opcode": "5d ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80480c0, 0) " }
+            ],
+            "content": { "bytes": [ 93 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480c0",
+            "mnemonic": "lea esp, [ecx + 0xfffffffc]",
+            "opcode": "8d 61 fc ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (ecx<32> + -4<32>);" },
+              { "id": 1, "op": "goto (0x80480c3, 0) " }
+            ],
+            "content": { "bytes": [ 141, 97, 252 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480c3",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_0",
+        "value": "0x80480c4",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80480c4",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80480c5, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480c5",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x80480c7, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480c7",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80480ca, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480ca",
+            "mnemonic": "cmp [ebp + 0x8], 0x3d",
+            "opcode": "80 7d 08 3d ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 61<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -3<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 61<8>);"
+              },
+              { "id": 7, "op": "goto (0x80480ce, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 61 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480ce",
+            "mnemonic": "jz 0x80480da",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x80480da, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x80480d0, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480d0",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80480d3, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480d3",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80480d5, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480d5",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 1a 02 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080480da;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x80480da, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 26, 2, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480da",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x80480db, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480db",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80480e0, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480e0",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_1",
+        "value": "0x80480e1",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80480e1",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80480e2, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480e2",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x80480e4, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480e4",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80480e7, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480e7",
+            "mnemonic": "cmp [ebp + 0x8], 0x4d",
+            "opcode": "80 7d 08 4d ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 77<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -3<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 77<8>);"
+              },
+              { "id": 7, "op": "goto (0x80480eb, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 77 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480eb",
+            "mnemonic": "jz 0x80480f7",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x80480f7, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x80480ed, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480ed",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80480f0, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480f0",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80480f2, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480f2",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 fd 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080480f7;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x80480f7, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 253, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480f7",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x80480f8, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480f8",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80480fd, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480fd",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_2",
+        "value": "0x80480fe",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80480fe",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80480ff, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80480ff",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x8048101, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048101",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048104, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048104",
+            "mnemonic": "mov eax, [ebp + 0x8]",
+            "opcode": "8b 45 08 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := @[(ebp<32> + 8<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x8048107, 0) " }
+            ],
+            "content": { "bytes": [ 139, 69, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048107",
+            "mnemonic": "lea eax, [eax + eax + 0x7a]",
+            "opcode": "8d 44 00 7a ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (eax<32> + (eax<32> + 122<32>));"
+              },
+              { "id": 1, "op": "goto (0x804810b, 0) " }
+            ],
+            "content": { "bytes": [ 141, 68, 0, 122 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804810b",
+            "mnemonic": "cmp al, 0xfffffffc",
+            "opcode": "3c fc ",
+            "code": [
+              { "id": 0, "op": "res8<8> := (eax<32>{7..0} - -4<8>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (! (eax<32>{7}) & (eax<32>{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              { "id": 4, "op": "AF<1> := (eax<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (eax<32>{7..0} <u -4<8>);" },
+              { "id": 7, "op": "goto (0x804810d, 0) " }
+            ],
+            "content": { "bytes": [ 60, 252 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804810d",
+            "mnemonic": "jz 0x8048119",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x8048119, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x804810f, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804810f",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048112, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048112",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048114, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048114",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 db 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048119;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x8048119, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 219, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048119",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x804811a, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804811a",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x804811f, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804811f",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_3",
+        "value": "0x8048120",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x8048120",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048121, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048121",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x8048123, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048123",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048126, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048126",
+            "mnemonic": "cmp [ebp + 0x8], 0x4e",
+            "opcode": "80 7d 08 4e ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 78<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -2<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 78<8>);"
+              },
+              { "id": 7, "op": "goto (0x804812a, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 78 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804812a",
+            "mnemonic": "jz 0x8048136",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x8048136, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x804812c, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804812c",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x804812f, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804812f",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048131, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048131",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 be 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048136;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x8048136, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 190, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048136",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x8048137, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048137",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x804813c, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804813c",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_4",
+        "value": "0x804813d",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x804813d",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804813e, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804813e",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x8048140, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048140",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048143, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048143",
+            "mnemonic": "mov eax, [ebp + 0x8]",
+            "opcode": "8b 45 08 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := @[(ebp<32> + 8<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x8048146, 0) " }
+            ],
+            "content": { "bytes": [ 139, 69, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048146",
+            "mnemonic": "add eax, eax",
+            "opcode": "01 c0 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (eax<32> + eax<32>);" },
+              { "id": 1, "op": "OF<1> := (eax<32>{31} <> res32<32>{31});" },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := ((uext5 eax<32>{3..0}) + (uext5 eax<32>{3..0})){4};"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := ((uext33 eax<32>) + (uext33 eax<32>)){32};"
+              },
+              { "id": 7, "op": "eax<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048148, 0) " }
+            ],
+            "content": { "bytes": [ 1, 192 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048148",
+            "mnemonic": "cmp al, 0xffffffa8",
+            "opcode": "3c a8 ",
+            "code": [
+              { "id": 0, "op": "res8<8> := (eax<32>{7..0} - -88<8>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (! (eax<32>{7}) & (eax<32>{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              { "id": 4, "op": "AF<1> := (eax<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (eax<32>{7..0} <u -88<8>);" },
+              { "id": 7, "op": "goto (0x804814a, 0) " }
+            ],
+            "content": { "bytes": [ 60, 168 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804814a",
+            "mnemonic": "jz 0x8048156",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x8048156, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x804814c, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804814c",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x804814f, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804814f",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048151, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048151",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 9e 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048156;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x8048156, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 158, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048156",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x8048157, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048157",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x804815c, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804815c",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_5",
+        "value": "0x804815d",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x804815d",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804815e, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804815e",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x8048160, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048160",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048163, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048163",
+            "mnemonic": "cmp [ebp + 0x8], 0x49",
+            "opcode": "80 7d 08 49 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 73<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -7<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 73<8>);"
+              },
+              { "id": 7, "op": "goto (0x8048167, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 73 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048167",
+            "mnemonic": "jz 0x8048173",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x8048173, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x8048169, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048169",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x804816c, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804816c",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804816e, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804816e",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 81 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048173;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x8048173, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 129, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048173",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x8048174, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048174",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x8048179, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048179",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_6",
+        "value": "0x804817a",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x804817a",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804817b, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804817b",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x804817d, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804817d",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048180, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048180",
+            "mnemonic": "cmp [ebp + 0x8], 0x43",
+            "opcode": "80 7d 08 43 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 67<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u 3<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 67<8>);"
+              },
+              { "id": 7, "op": "goto (0x8048184, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 67 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048184",
+            "mnemonic": "jz 0x8048190",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x8048190, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x8048186, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048186",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048189, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048189",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804818b, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804818b",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 64 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048190;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x8048190, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 100, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048190",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x8048191, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048191",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x8048196, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048196",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_7",
+        "value": "0x8048197",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x8048197",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048198, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048198",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x804819a, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804819a",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x804819d, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804819d",
+            "mnemonic": "cmp [ebp + 0x8], 0x4f",
+            "opcode": "80 7d 08 4f ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 79<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -1<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 79<8>);"
+              },
+              { "id": 7, "op": "goto (0x80481a1, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 79 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481a1",
+            "mnemonic": "jz 0x80481ad",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x80481ad, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x80481a3, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481a3",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80481a6, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481a6",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80481a8, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481a8",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 47 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080481ad;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x80481ad, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 71, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481ad",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x80481ae, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481ae",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80481b3, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481b3",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_8",
+        "value": "0x80481b4",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80481b4",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80481b5, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481b5",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x80481b7, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481b7",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80481ba, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481ba",
+            "mnemonic": "cmp [ebp + 0x8], 0x52",
+            "opcode": "80 7d 08 52 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 82<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u 2<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 82<8>);"
+              },
+              { "id": 7, "op": "goto (0x80481be, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 82 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481be",
+            "mnemonic": "jz 0x80481ca",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x80481ca, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x80481c0, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481c0",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80481c3, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481c3",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80481c5, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481c5",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 2a 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080481ca;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x80481ca, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 42, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481ca",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x80481cb, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481cb",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80481d0, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481d0",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_9",
+        "value": "0x80481d1",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80481d1",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80481d2, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481d2",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x80481d4, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481d4",
+            "mnemonic": "sub esp, 0x8",
+            "opcode": "83 ec 08 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 8<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -8<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 8<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80481d7, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481d7",
+            "mnemonic": "cmp [ebp + 0x8], 0x45",
+            "opcode": "80 7d 08 45 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 69<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ebp<32> + 8<32>),<-,1]{7} &  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u 5<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 69<8>);"
+              },
+              { "id": 7, "op": "goto (0x80481db, 0) " }
+            ],
+            "content": { "bytes": [ 128, 125, 8, 69 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481db",
+            "mnemonic": "jz 0x80481e7",
+            "opcode": "74 0a ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x80481e7, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x80481dd, 0) " }
+            ],
+            "content": { "bytes": [ 116, 10 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481dd",
+            "mnemonic": "sub esp, 0xc",
+            "opcode": "83 ec 0c ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 12<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u -4<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 12<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80481e0, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481e0",
+            "mnemonic": "push 0x1",
+            "opcode": "6a 01 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := 1<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80481e2, 0) " }
+            ],
+            "content": { "bytes": [ 106, 1 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481e2",
+            "mnemonic": "call 0x80482f4",
+            "opcode": "e8 0d 01 00 00 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x080481e7;" },
+              {
+                "id": 2,
+                "op": "goto (0x80482f4, 0) #call with return address @ (0x80481e7, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 13, 1, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481e7",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x80481e8, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481e8",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80481ed, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481ed",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "check_char_10",
+        "value": "0x80481ee",
+        "content": {
+          "label": "instruction",
+          "address": "0x80481ee",
+          "mnemonic": "jmp 0x80480c4",
+          "opcode": "e9 d1 fe ff ff ",
+          "code": [ { "id": 0, "op": "goto (0x80480c4, 0) " } ],
+          "content": { "bytes": [ 233, 209, 254, 255, 255 ], "size": 5 }
+        }
+      },
+      {
+        "label": "symbol",
+        "name": "check",
+        "value": "0x80481f3",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80481f3",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80481f4, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481f4",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x80481f6, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481f6",
+            "mnemonic": "push ebx",
+            "opcode": "53 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80481f7, 0) " }
+            ],
+            "content": { "bytes": [ 83 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481f7",
+            "mnemonic": "sub esp, 0x10",
+            "opcode": "83 ec 10 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> - 16<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (esp<32>{3..0} <u 0<4>);" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (esp<32> <u 16<32>);" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80481fa, 0) " }
+            ],
+            "content": { "bytes": [ 131, 236, 16 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481fa",
+            "mnemonic": "mov ebx, [ebp + 0x8]",
+            "opcode": "8b 5d 08 ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := @[(ebp<32> + 8<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x80481fd, 0) " }
+            ],
+            "content": { "bytes": [ 139, 93, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80481fd",
+            "mnemonic": "movsx eax, [ebx]",
+            "opcode": "0f be 03 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := (sext32 @[ebx<32>,<-,1]);" },
+              { "id": 1, "op": "goto (0x8048200, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 3 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048200",
+            "mnemonic": "push eax",
+            "opcode": "50 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := eax<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048201, 0) " }
+            ],
+            "content": { "bytes": [ 80 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048201",
+            "mnemonic": "call 0x80480c4",
+            "opcode": "e8 be fe ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048206;" },
+              {
+                "id": 2,
+                "op": "goto (0x80480c4, 0) #call with return address @ (0x8048206, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 190, 254, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048206",
+            "mnemonic": "movsx eax, [ebx + 0x1]",
+            "opcode": "0f be 43 01 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 1<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x804820a, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 1 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804820a",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x804820d, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804820d",
+            "mnemonic": "call 0x80480e1",
+            "opcode": "e8 cf fe ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048212;" },
+              {
+                "id": 2,
+                "op": "goto (0x80480e1, 0) #call with return address @ (0x8048212, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 207, 254, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048212",
+            "mnemonic": "movsx eax, [ebx + 0x2]",
+            "opcode": "0f be 43 02 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 2<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x8048216, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 2 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048216",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x8048219, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048219",
+            "mnemonic": "call 0x80480fe",
+            "opcode": "e8 e0 fe ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x0804821e;" },
+              {
+                "id": 2,
+                "op": "goto (0x80480fe, 0) #call with return address @ (0x804821e, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 224, 254, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804821e",
+            "mnemonic": "movsx eax, [ebx + 0x3]",
+            "opcode": "0f be 43 03 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 3<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x8048222, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 3 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048222",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x8048225, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048225",
+            "mnemonic": "call 0x8048120",
+            "opcode": "e8 f6 fe ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x0804822a;" },
+              {
+                "id": 2,
+                "op": "goto (0x8048120, 0) #call with return address @ (0x804822a, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 246, 254, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804822a",
+            "mnemonic": "movsx eax, [ebx + 0x4]",
+            "opcode": "0f be 43 04 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 4<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x804822e, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 4 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804822e",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x8048231, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048231",
+            "mnemonic": "call 0x804813d",
+            "opcode": "e8 07 ff ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048236;" },
+              {
+                "id": 2,
+                "op": "goto (0x804813d, 0) #call with return address @ (0x8048236, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 7, 255, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048236",
+            "mnemonic": "movsx eax, [ebx + 0x5]",
+            "opcode": "0f be 43 05 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 5<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x804823a, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 5 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804823a",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x804823d, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804823d",
+            "mnemonic": "call 0x804815d",
+            "opcode": "e8 1b ff ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048242;" },
+              {
+                "id": 2,
+                "op": "goto (0x804815d, 0) #call with return address @ (0x8048242, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 27, 255, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048242",
+            "mnemonic": "movsx eax, [ebx + 0x6]",
+            "opcode": "0f be 43 06 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 6<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x8048246, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 6 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048246",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x8048249, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048249",
+            "mnemonic": "call 0x804817a",
+            "opcode": "e8 2c ff ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x0804824e;" },
+              {
+                "id": 2,
+                "op": "goto (0x804817a, 0) #call with return address @ (0x804824e, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 44, 255, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804824e",
+            "mnemonic": "movsx eax, [ebx + 0x7]",
+            "opcode": "0f be 43 07 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 7<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x8048252, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 7 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048252",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x8048255, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048255",
+            "mnemonic": "call 0x8048197",
+            "opcode": "e8 3d ff ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x0804825a;" },
+              {
+                "id": 2,
+                "op": "goto (0x8048197, 0) #call with return address @ (0x804825a, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 61, 255, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804825a",
+            "mnemonic": "movsx eax, [ebx + 0x8]",
+            "opcode": "0f be 43 08 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 8<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x804825e, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 8 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804825e",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x8048261, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048261",
+            "mnemonic": "call 0x80481b4",
+            "opcode": "e8 4e ff ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048266;" },
+              {
+                "id": 2,
+                "op": "goto (0x80481b4, 0) #call with return address @ (0x8048266, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 78, 255, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048266",
+            "mnemonic": "movsx eax, [ebx + 0x9]",
+            "opcode": "0f be 43 09 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 9<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x804826a, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 9 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804826a",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x804826d, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804826d",
+            "mnemonic": "call 0x80481d1",
+            "opcode": "e8 5f ff ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x08048272;" },
+              {
+                "id": 2,
+                "op": "goto (0x80481d1, 0) #call with return address @ (0x8048272, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 95, 255, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048272",
+            "mnemonic": "movsx eax, [ebx + 0xa]",
+            "opcode": "0f be 43 0a ",
+            "code": [
+              {
+                "id": 0,
+                "op": "eax<32> := (sext32 @[(ebx<32> + 10<32>),<-,1]);"
+              },
+              { "id": 1, "op": "goto (0x8048276, 0) " }
+            ],
+            "content": { "bytes": [ 15, 190, 67, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048276",
+            "mnemonic": "mov [esp], eax",
+            "opcode": "89 04 24 ",
+            "code": [
+              { "id": 0, "op": "@[esp<32>,<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x8048279, 0) " }
+            ],
+            "content": { "bytes": [ 137, 4, 36 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048279",
+            "mnemonic": "call 0x80480c4",
+            "opcode": "e8 46 fe ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x0804827e;" },
+              {
+                "id": 2,
+                "op": "goto (0x80480c4, 0) #call with return address @ (0x804827e, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 70, 254, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804827e",
+            "mnemonic": "mov ebx, [ebp + 0xfffffffc]",
+            "opcode": "8b 5d fc ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := @[(ebp<32> + -4<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x8048281, 0) " }
+            ],
+            "content": { "bytes": [ 139, 93, 252 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048281",
+            "mnemonic": "add esp, 0x10",
+            "opcode": "83 c4 10 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esp<32> + 16<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (! (esp<32>{31}) & (esp<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := 0<1>;" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := ((uext33 esp<32>) + 16<33>){32};" },
+              { "id": 7, "op": "esp<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x8048284, 0) " }
+            ],
+            "content": { "bytes": [ 131, 196, 16 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048284",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x8048289, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048289",
+            "mnemonic": "leave",
+            "opcode": "c9 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := ebp<32>;" },
+              { "id": 1, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 2, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 3, "op": "goto (0x804828a, 0) " }
+            ],
+            "content": { "bytes": [ 201 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804828a",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "fgets",
+        "value": "0x804828b",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x804828b",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x804828c, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804828c",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x8048291, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048291",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x8048293, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048293",
+            "mnemonic": "push edi",
+            "opcode": "57 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := edi<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048294, 0) " }
+            ],
+            "content": { "bytes": [ 87 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048294",
+            "mnemonic": "push esi",
+            "opcode": "56 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := esi<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048295, 0) " }
+            ],
+            "content": { "bytes": [ 86 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048295",
+            "mnemonic": "push ebx",
+            "opcode": "53 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048296, 0) " }
+            ],
+            "content": { "bytes": [ 83 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048296",
+            "mnemonic": "push ecx",
+            "opcode": "51 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ecx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048297, 0) " }
+            ],
+            "content": { "bytes": [ 81 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048297",
+            "mnemonic": "mov esi, [ebp + 0x8]",
+            "opcode": "8b 75 08 ",
+            "code": [
+              { "id": 0, "op": "esi<32> := @[(ebp<32> + 8<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x804829a, 0) " }
+            ],
+            "content": { "bytes": [ 139, 117, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804829a",
+            "mnemonic": "sub eax, esi",
+            "opcode": "29 f0 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (eax<32> - esi<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := ((eax<32>{31} <> esi<32>{31}) & (eax<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := (eax<32>{3..0} <u esi<32>{3..0});" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := (eax<32> <u esi<32>);" },
+              { "id": 7, "op": "eax<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x804829c, 0) " }
+            ],
+            "content": { "bytes": [ 41, 240 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804829c",
+            "mnemonic": "mov [ebp + 0xfffffff0], eax",
+            "opcode": "89 45 f0 ",
+            "code": [
+              { "id": 0, "op": "@[(ebp<32> + -16<32>),<-,4] := eax<32>;" },
+              { "id": 1, "op": "goto (0x804829f, 0) " }
+            ],
+            "content": { "bytes": [ 137, 69, 240 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804829f",
+            "mnemonic": "mov eax, [ebp + 0xfffffff0]",
+            "opcode": "8b 45 f0 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := @[(ebp<32> + -16<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x80482a2, 0) " }
+            ],
+            "content": { "bytes": [ 139, 69, 240 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482a2",
+            "mnemonic": "mov edi, esi",
+            "opcode": "89 f7 ",
+            "code": [
+              { "id": 0, "op": "edi<32> := esi<32>;" },
+              { "id": 1, "op": "goto (0x80482a4, 0) " }
+            ],
+            "content": { "bytes": [ 137, 247 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482a4",
+            "mnemonic": "add eax, esi",
+            "opcode": "01 f0 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (eax<32> + esi<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := ((eax<32>{31} = esi<32>{31}) & (eax<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := ((uext5 eax<32>{3..0}) + (uext5 esi<32>{3..0})){4};"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := ((uext33 eax<32>) + (uext33 esi<32>)){32};"
+              },
+              { "id": 7, "op": "eax<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80482a6, 0) " }
+            ],
+            "content": { "bytes": [ 1, 240 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482a6",
+            "mnemonic": "cmp [ebp + 0xc], eax",
+            "opcode": "39 45 0c ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res32<32> := (@[(ebp<32> + 12<32>),<-,4] - eax<32>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := ((@[(ebp<32> + 15<32>),<-,1]{7} <> eax<32>{31}) &  (@[(ebp<32> + 15<32>),<-,1]{7} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ebp<32> + 12<32>),<-,1]{3..0} <u eax<32>{3..0});"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ebp<32> + 12<32>),<-,4] <u eax<32>);"
+              },
+              { "id": 7, "op": "goto (0x80482a9, 0) " }
+            ],
+            "content": { "bytes": [ 57, 69, 12 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482a9",
+            "mnemonic": "jle 0x80482c7",
+            "opcode": "7e 1c ",
+            "code": [
+              {
+                "id": 0,
+                "op": "if (ZF<1> | (SF<1> <> OF<1>)) goto (0x80482c7, 0) else goto 1"
+              },
+              { "id": 1, "op": "goto (0x80482ab, 0) " }
+            ],
+            "content": { "bytes": [ 126, 28 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482ab",
+            "mnemonic": "mov ebx, [ebp + 0x10]",
+            "opcode": "8b 5d 10 ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := @[(ebp<32> + 16<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x80482ae, 0) " }
+            ],
+            "content": { "bytes": [ 139, 93, 16 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482ae",
+            "mnemonic": "mov eax, 0x3",
+            "opcode": "b8 03 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 3<32>;" },
+              { "id": 1, "op": "goto (0x80482b3, 0) " }
+            ],
+            "content": { "bytes": [ 184, 3, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482b3",
+            "mnemonic": "mov ecx, esi",
+            "opcode": "89 f1 ",
+            "code": [
+              { "id": 0, "op": "ecx<32> := esi<32>;" },
+              { "id": 1, "op": "goto (0x80482b5, 0) " }
+            ],
+            "content": { "bytes": [ 137, 241 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482b5",
+            "mnemonic": "mov edx, 0x1",
+            "opcode": "ba 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "edx<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80482ba, 0) " }
+            ],
+            "content": { "bytes": [ 186, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482ba",
+            "mnemonic": "unsupported int 128",
+            "opcode": "cd 80 ",
+            "code": [ { "id": 0, "op": "#unsupported cd 80" } ],
+            "content": { "bytes": [ 205, 128 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482bc",
+            "mnemonic": "test eax, eax",
+            "opcode": "85 c0 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := eax<32>;" },
+              { "id": 1, "op": "OF<1> := 0<1>;" },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "AF<1> := undef;" },
+              {
+                "id": 4,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 5, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 6, "op": "CF<1> := 0<1>;" },
+              { "id": 7, "op": "goto (0x80482be, 0) " }
+            ],
+            "content": { "bytes": [ 133, 192 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482be",
+            "mnemonic": "jz 0x80482c7",
+            "opcode": "74 07 ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x80482c7, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x80482c0, 0) " }
+            ],
+            "content": { "bytes": [ 116, 7 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482c0",
+            "mnemonic": "inc esi",
+            "opcode": "46 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (esi<32> + 1<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (! (esi<32>{31}) & (esi<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              {
+                "id": 3,
+                "op": "AF<1> := ((uext5 esi<32>{3..0}) + 1<5>){4};"
+              },
+              {
+                "id": 4,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 5, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 6, "op": "esi<32> := res32<32>;" },
+              { "id": 7, "op": "goto (0x80482c1, 0) " }
+            ],
+            "content": { "bytes": [ 70 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482c1",
+            "mnemonic": "cmp [esi + 0xffffffff], 0xa",
+            "opcode": "80 7e ff 0a ",
+            "code": [
+              {
+                "id": 0,
+                "op": "res8<8> := (@[(esi<32> + -1<32>),<-,1] - 10<8>);"
+              },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(esi<32> + -1<32>),<-,1]{7} &  (@[(esi<32> + -1<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(esi<32> + -1<32>),<-,1]{3..0} <u -6<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(esi<32> + -1<32>),<-,1] <u 10<8>);"
+              },
+              { "id": 7, "op": "goto (0x80482c5, 0) " }
+            ],
+            "content": { "bytes": [ 128, 126, 255, 10 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482c5",
+            "mnemonic": "jnz 0x804829f",
+            "opcode": "75 d8 ",
+            "code": [
+              {
+                "id": 0,
+                "op": "if ! (ZF<1>) goto (0x804829f, 0) else goto 1"
+              },
+              { "id": 1, "op": "goto (0x80482c7, 0) " }
+            ],
+            "content": { "bytes": [ 117, 216 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482c7",
+            "mnemonic": "mov [edi], 0x0",
+            "opcode": "c6 07 00 ",
+            "code": [
+              { "id": 0, "op": "@[edi<32>,<-,1] := 0<8>;" },
+              { "id": 1, "op": "goto (0x80482ca, 0) " }
+            ],
+            "content": { "bytes": [ 198, 7, 0 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482ca",
+            "mnemonic": "mov eax, [ebp + 0x8]",
+            "opcode": "8b 45 08 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := @[(ebp<32> + 8<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x80482cd, 0) " }
+            ],
+            "content": { "bytes": [ 139, 69, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482cd",
+            "mnemonic": "pop edx",
+            "opcode": "5a ",
+            "code": [
+              { "id": 0, "op": "edx<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80482ce, 0) " }
+            ],
+            "content": { "bytes": [ 90 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482ce",
+            "mnemonic": "pop ebx",
+            "opcode": "5b ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80482cf, 0) " }
+            ],
+            "content": { "bytes": [ 91 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482cf",
+            "mnemonic": "pop esi",
+            "opcode": "5e ",
+            "code": [
+              { "id": 0, "op": "esi<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80482d0, 0) " }
+            ],
+            "content": { "bytes": [ 94 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482d0",
+            "mnemonic": "pop edi",
+            "opcode": "5f ",
+            "code": [
+              { "id": 0, "op": "edi<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80482d1, 0) " }
+            ],
+            "content": { "bytes": [ 95 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482d1",
+            "mnemonic": "pop ebp",
+            "opcode": "5d ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80482d2, 0) " }
+            ],
+            "content": { "bytes": [ 93 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482d2",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "puts",
+        "value": "0x80482d3",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80482d3",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80482d4, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482d4",
+            "mnemonic": "xor edx, edx",
+            "opcode": "31 d2 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := 0<32>;" },
+              { "id": 1, "op": "OF<1> := 0<1>;" },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              { "id": 3, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 4, "op": "AF<1> := 0<1>;" },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 6, "op": "CF<1> := 0<1>;" },
+              { "id": 7, "op": "edx<32> := res32<32>;" },
+              { "id": 8, "op": "goto (0x80482d6, 0) " }
+            ],
+            "content": { "bytes": [ 49, 210 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482d6",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x80482d8, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482d8",
+            "mnemonic": "push ebx",
+            "opcode": "53 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80482d9, 0) " }
+            ],
+            "content": { "bytes": [ 83 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482d9",
+            "mnemonic": "mov ecx, [ebp + 0x8]",
+            "opcode": "8b 4d 08 ",
+            "code": [
+              { "id": 0, "op": "ecx<32> := @[(ebp<32> + 8<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x80482dc, 0) " }
+            ],
+            "content": { "bytes": [ 139, 77, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482dc",
+            "mnemonic": "cmp [ecx + edx], 0x0",
+            "opcode": "80 3c 11 00 ",
+            "code": [
+              { "id": 0, "op": "res8<8> := @[(ecx<32> + edx<32>),<-,1];" },
+              {
+                "id": 1,
+                "op": "OF<1> := (@[(ecx<32> + edx<32>),<-,1]{7} &  (@[(ecx<32> + edx<32>),<-,1]{7} <> res8<8>{7}));"
+              },
+              { "id": 2, "op": "SF<1> := (res8<8> <s 0<8>);" },
+              { "id": 3, "op": "ZF<1> := (0<8> = res8<8>);" },
+              {
+                "id": 4,
+                "op": "AF<1> := (@[(ecx<32> + edx<32>),<-,1]{3..0} <u 0<4>);"
+              },
+              {
+                "id": 5,
+                "op": "PF<1> := ! ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+              },
+              {
+                "id": 6,
+                "op": "CF<1> := (@[(ecx<32> + edx<32>),<-,1] <u 0<8>);"
+              },
+              { "id": 7, "op": "goto (0x80482e0, 0) " }
+            ],
+            "content": { "bytes": [ 128, 60, 17, 0 ], "size": 4 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482e0",
+            "mnemonic": "jz 0x80482e5",
+            "opcode": "74 03 ",
+            "code": [
+              { "id": 0, "op": "if ZF<1> goto (0x80482e5, 0) else goto 1" },
+              { "id": 1, "op": "goto (0x80482e2, 0) " }
+            ],
+            "content": { "bytes": [ 116, 3 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482e2",
+            "mnemonic": "inc edx",
+            "opcode": "42 ",
+            "code": [
+              { "id": 0, "op": "res32<32> := (edx<32> + 1<32>);" },
+              {
+                "id": 1,
+                "op": "OF<1> := (! (edx<32>{31}) & (edx<32>{31} <> res32<32>{31}));"
+              },
+              { "id": 2, "op": "SF<1> := (res32<32> <s 0<32>);" },
+              {
+                "id": 3,
+                "op": "AF<1> := ((uext5 edx<32>{3..0}) + 1<5>){4};"
+              },
+              {
+                "id": 4,
+                "op": "PF<1> := ! ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+              },
+              { "id": 5, "op": "ZF<1> := (0<32> = res32<32>);" },
+              { "id": 6, "op": "edx<32> := res32<32>;" },
+              { "id": 7, "op": "goto (0x80482e3, 0) " }
+            ],
+            "content": { "bytes": [ 66 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482e3",
+            "mnemonic": "jmp 0x80482dc",
+            "opcode": "eb f7 ",
+            "code": [ { "id": 0, "op": "goto (0x80482dc, 0) " } ],
+            "content": { "bytes": [ 235, 247 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482e5",
+            "mnemonic": "mov eax, 0x4",
+            "opcode": "b8 04 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 4<32>;" },
+              { "id": 1, "op": "goto (0x80482ea, 0) " }
+            ],
+            "content": { "bytes": [ 184, 4, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482ea",
+            "mnemonic": "mov ebx, 0x1",
+            "opcode": "bb 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80482ef, 0) " }
+            ],
+            "content": { "bytes": [ 187, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482ef",
+            "mnemonic": "unsupported int 128",
+            "opcode": "cd 80 ",
+            "code": [ { "id": 0, "op": "#unsupported cd 80" } ],
+            "content": { "bytes": [ 205, 128 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482f1",
+            "mnemonic": "pop ebx",
+            "opcode": "5b ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80482f2, 0) " }
+            ],
+            "content": { "bytes": [ 91 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482f2",
+            "mnemonic": "pop ebp",
+            "opcode": "5d ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := @[esp<32>,<-,4];" },
+              { "id": 1, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 2, "op": "goto (0x80482f3, 0) " }
+            ],
+            "content": { "bytes": [ 93 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482f3",
+            "mnemonic": "ret",
+            "opcode": "c3 ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> + 4<32>);" },
+              { "id": 1, "op": "goto @[(esp<32> - 4<32>),<-,4] #return" }
+            ],
+            "content": { "bytes": [ 195 ], "size": 1 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "exit",
+        "value": "0x80482f4",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x80482f4",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80482f5, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482f5",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x80482fa, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482fa",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x80482fc, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482fc",
+            "mnemonic": "push ebx",
+            "opcode": "53 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x80482fd, 0) " }
+            ],
+            "content": { "bytes": [ 83 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x80482fd",
+            "mnemonic": "mov ebx, [ebp + 0x8]",
+            "opcode": "8b 5d 08 ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := @[(ebp<32> + 8<32>),<-,4];" },
+              { "id": 1, "op": "goto (0x8048300, 0) " }
+            ],
+            "content": { "bytes": [ 139, 93, 8 ], "size": 3 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048300",
+            "mnemonic": "unsupported int 128",
+            "opcode": "cd 80 ",
+            "code": [ { "id": 0, "op": "#unsupported cd 80" } ],
+            "content": { "bytes": [ 205, 128 ], "size": 2 }
+          }
+        ]
+      },
+      {
+        "label": "symbol",
+        "name": "_start",
+        "value": "0x8048302",
+        "content": [
+          {
+            "label": "instruction",
+            "address": "0x8048302",
+            "mnemonic": "push ebp",
+            "opcode": "55 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048303, 0) " }
+            ],
+            "content": { "bytes": [ 85 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048303",
+            "mnemonic": "mov ebp, esp",
+            "opcode": "89 e5 ",
+            "code": [
+              { "id": 0, "op": "ebp<32> := esp<32>;" },
+              { "id": 1, "op": "goto (0x8048305, 0) " }
+            ],
+            "content": { "bytes": [ 137, 229 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048305",
+            "mnemonic": "push ebx",
+            "opcode": "53 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048306, 0) " }
+            ],
+            "content": { "bytes": [ 83 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048306",
+            "mnemonic": "push eax",
+            "opcode": "50 ",
+            "code": [
+              { "id": 0, "op": "@[(esp<32> - 4<32>),<-,4] := eax<32>;" },
+              { "id": 1, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 2, "op": "goto (0x8048307, 0) " }
+            ],
+            "content": { "bytes": [ 80 ], "size": 1 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048307",
+            "mnemonic": "call 0x8048074",
+            "opcode": "e8 68 fd ff ff ",
+            "code": [
+              { "id": 0, "op": "esp<32> := (esp<32> - 4<32>);" },
+              { "id": 1, "op": "@[esp<32>,<-,4] := 0x0804830c;" },
+              {
+                "id": 2,
+                "op": "goto (0x8048074, 0) #call with return address @ (0x804830c, 0)"
+              }
+            ],
+            "content": { "bytes": [ 232, 104, 253, 255, 255 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804830c",
+            "mnemonic": "mov ebx, eax",
+            "opcode": "89 c3 ",
+            "code": [
+              { "id": 0, "op": "ebx<32> := eax<32>;" },
+              { "id": 1, "op": "goto (0x804830e, 0) " }
+            ],
+            "content": { "bytes": [ 137, 195 ], "size": 2 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x804830e",
+            "mnemonic": "mov eax, 0x1",
+            "opcode": "b8 01 00 00 00 ",
+            "code": [
+              { "id": 0, "op": "eax<32> := 1<32>;" },
+              { "id": 1, "op": "goto (0x8048313, 0) " }
+            ],
+            "content": { "bytes": [ 184, 1, 0, 0, 0 ], "size": 5 }
+          },
+          {
+            "label": "instruction",
+            "address": "0x8048313",
+            "mnemonic": "unsupported int 128",
+            "opcode": "cd 80 ",
+            "code": [ { "id": 0, "op": "#unsupported cd 80" } ],
+            "content": { "bytes": [ 205, 128 ], "size": 2 }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "section",
+    "type": "PROGBITS",
+    "name": ".rodata",
+    "flags": "r--",
+    "content": [
+      {
+        "label": "string",
+        "string": "Enter code:\n",
+        "content": {
+          "bytes": [
+            69, 110, 116, 101, 114, 32, 99, 111, 100, 101, 58, 10, 0
+          ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "Success!\n",
+        "content": {
+          "bytes": [ 83, 117, 99, 99, 101, 115, 115, 33, 10, 0 ],
+          "size": 10
+        }
+      }
+    ]
+  },
+  {
+    "label": "section",
+    "type": "SYMTAB",
+    "name": ".symtab",
+    "flags": "---",
+    "content": {
+      "bytes": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 151, 129,
+        4, 8, 29, 0, 0, 0, 18, 0, 1, 0, 14, 0, 0, 0, 139, 130, 4, 8, 72, 0,
+        0, 0, 18, 0, 1, 0, 20, 0, 0, 0, 211, 130, 4, 8, 33, 0, 0, 0, 18, 0,
+        1, 0, 25, 0, 0, 0, 61, 129, 4, 8, 32, 0, 0, 0, 18, 0, 1, 0, 38, 0, 0,
+        0, 238, 129, 4, 8, 5, 0, 0, 0, 18, 0, 1, 0, 52, 0, 0, 0, 209, 129, 4,
+        8, 29, 0, 0, 0, 18, 0, 1, 0, 65, 0, 0, 0, 254, 128, 4, 8, 34, 0, 0,
+        0, 18, 0, 1, 0, 78, 0, 0, 0, 196, 128, 4, 8, 29, 0, 0, 0, 18, 0, 1,
+        0, 91, 0, 0, 0, 243, 129, 4, 8, 152, 0, 0, 0, 18, 0, 1, 0, 97, 0, 0,
+        0, 2, 131, 4, 8, 19, 0, 0, 0, 18, 0, 1, 0, 104, 0, 0, 0, 122, 129, 4,
+        8, 29, 0, 0, 0, 18, 0, 1, 0, 117, 0, 0, 0, 32, 129, 4, 8, 29, 0, 0,
+        0, 18, 0, 1, 0, 130, 0, 0, 0, 116, 128, 4, 8, 80, 0, 0, 0, 18, 0, 1,
+        0, 135, 0, 0, 0, 225, 128, 4, 8, 29, 0, 0, 0, 18, 0, 1, 0, 148, 0, 0,
+        0, 180, 129, 4, 8, 29, 0, 0, 0, 18, 0, 1, 0, 161, 0, 0, 0, 93, 129,
+        4, 8, 29, 0, 0, 0, 18, 0, 1, 0, 174, 0, 0, 0, 244, 130, 4, 8, 14, 0,
+        0, 0, 18, 0, 1, 0
+      ],
+      "size": 288
+    }
+  },
+  {
+    "label": "section",
+    "type": "STRTAB",
+    "name": ".strtab",
+    "flags": "---",
+    "content": [
+      {
+        "label": "string",
+        "string": "",
+        "content": { "bytes": [ 0 ], "size": 1 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_7",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 55, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "fgets",
+        "content": { "bytes": [ 102, 103, 101, 116, 115, 0 ], "size": 6 }
+      },
+      {
+        "label": "string",
+        "string": "puts",
+        "content": { "bytes": [ 112, 117, 116, 115, 0 ], "size": 5 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_4",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 52, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_10",
+        "content": {
+          "bytes": [
+            99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 49, 48, 0
+          ],
+          "size": 14
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_9",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 57, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_2",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 50, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_0",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 48, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check",
+        "content": { "bytes": [ 99, 104, 101, 99, 107, 0 ], "size": 6 }
+      },
+      {
+        "label": "string",
+        "string": "_start",
+        "content": { "bytes": [ 95, 115, 116, 97, 114, 116, 0 ], "size": 7 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_6",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 54, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_3",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 51, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "main",
+        "content": { "bytes": [ 109, 97, 105, 110, 0 ], "size": 5 }
+      },
+      {
+        "label": "string",
+        "string": "check_char_1",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 49, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_8",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 56, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "check_char_5",
+        "content": {
+          "bytes": [ 99, 104, 101, 99, 107, 95, 99, 104, 97, 114, 95, 53, 0 ],
+          "size": 13
+        }
+      },
+      {
+        "label": "string",
+        "string": "exit",
+        "content": { "bytes": [ 101, 120, 105, 116, 0 ], "size": 5 }
+      }
+    ]
+  },
+  {
+    "label": "section",
+    "type": "STRTAB",
+    "name": ".shstrtab",
+    "flags": "---",
+    "content": [
+      {
+        "label": "string",
+        "string": "",
+        "content": { "bytes": [ 0 ], "size": 1 }
+      },
+      {
+        "label": "string",
+        "string": ".symtab",
+        "content": {
+          "bytes": [ 46, 115, 121, 109, 116, 97, 98, 0 ],
+          "size": 8
+        }
+      },
+      {
+        "label": "string",
+        "string": ".strtab",
+        "content": {
+          "bytes": [ 46, 115, 116, 114, 116, 97, 98, 0 ],
+          "size": 8
+        }
+      },
+      {
+        "label": "string",
+        "string": ".shstrtab",
+        "content": {
+          "bytes": [ 46, 115, 104, 115, 116, 114, 116, 97, 98, 0 ],
+          "size": 10
+        }
+      },
+      {
+        "label": "string",
+        "string": ".text",
+        "content": { "bytes": [ 46, 116, 101, 120, 116, 0 ], "size": 6 }
+      },
+      {
+        "label": "string",
+        "string": ".rodata",
+        "content": {
+          "bytes": [ 46, 114, 111, 100, 97, 116, 97, 0 ],
+          "size": 8
+        }
+      },
+      {
+        "label": "string",
+        "string": ".bss",
+        "content": { "bytes": [ 46, 98, 115, 115, 0 ], "size": 5 }
+      }
+    ]
+  },
+  { "bytes": [ 0, 0, 0 ], "size": 3 },
+  {
+    "label": "header",
+    "name": "section-header",
+    "content": {
+      "bytes": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 0, 0, 0, 1, 0,
+        0, 0, 6, 0, 0, 0, 116, 128, 4, 8, 116, 0, 0, 0, 161, 2, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 1, 0, 0, 0,
+        50, 0, 0, 0, 21, 131, 4, 8, 21, 3, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 41, 0, 0, 0, 8, 0, 0, 0, 3, 0, 0, 0,
+        44, 147, 4, 8, 44, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44,
+        3, 0, 0, 32, 1, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 16, 0, 0,
+        0, 9, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 4, 0, 0, 179,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0,
+        3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 4, 0, 0, 46, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0
+      ],
+      "size": 280
+    }
+  }
+]

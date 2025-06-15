@@ -1,0 +1,29 @@
+.metrics-table {
+  width: 100%;
+  display: inline-table;
+}
+
+.metrics-table,
+td {
+  text-align: right;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.metrics-table,
+th {
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.metrics-table,
+tr {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.metrics-data {
+  width: 35%;
+}

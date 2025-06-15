@@ -1,0 +1,3784 @@
+[
+  {
+    "section": ".text",
+    "disassembly": [
+      {
+        "address": "0x8048074",
+        "mnemonic": "lea ecx, [esp + 0x4]",
+        "opcode": "8d 4c 24 04 ",
+        "code": [
+          { "id": 0, "lines": [ "ecx<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto (0x8048078, 0) " ] }
+        ],
+        "symbols": [ "main" ]
+      },
+      {
+        "address": "0x8048078",
+        "mnemonic": "and esp, 0xfffffff0",
+        "opcode": "83 e4 f0 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (-16<32> & esp<32>);" ] },
+          { "id": 1, "lines": [ "OF<1> := 0<1>;" ] },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := 0<1>;" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := 0<1>;" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x804807b, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804807b",
+        "mnemonic": "push [ecx + 0xfffffffc]",
+        "opcode": "ff 71 fc ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [
+              "@[(esp<32> - 4<32>),<-,4] := @[(ecx<32> + -4<32>),<-,4];"
+            ]
+          },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804807e, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804807e",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804807f, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804807f",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048081, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048081",
+        "mnemonic": "push ebx",
+        "opcode": "53 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048082, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048082",
+        "mnemonic": "push ecx",
+        "opcode": "51 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ecx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048083, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048083",
+        "mnemonic": "lea ebx, [ebp + 0xffffffec]",
+        "opcode": "8d 5d ec ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := (ebp<32> + -20<32>);" ] },
+          { "id": 1, "lines": [ "goto (0x8048086, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048086",
+        "mnemonic": "sub esp, 0x1c",
+        "opcode": "83 ec 1c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 28<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 28<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048089, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048089",
+        "mnemonic": "push 0x8048315",
+        "opcode": "68 15 83 04 08 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "@[(esp<32> - 4<32>),<-,4] := 0x08048315;" ]
+          },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804808e, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804808e",
+        "mnemonic": "call 0x80482d3",
+        "opcode": "e8 40 02 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048093;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482d3, 0) #call with return address @ (0x8048093, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048093",
+        "mnemonic": "add esp, 0xc",
+        "opcode": "83 c4 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> + 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (! (esp<32>{31}) & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "AF<1> := ((uext5 esp<32>{3..0}) + 12<5>){4};" ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := ((uext33 esp<32>) + 12<33>){32};" ]
+          },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048096, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048096",
+        "mnemonic": "push [0x804932c]",
+        "opcode": "ff 35 2c 93 04 08 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "@[(esp<32> - 4<32>),<-,4] := @[0x0804932c,<-,4];" ]
+          },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804809c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804809c",
+        "mnemonic": "push 0xc",
+        "opcode": "6a 0c ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 12<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804809e, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804809e",
+        "mnemonic": "push ebx",
+        "opcode": "53 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804809f, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804809f",
+        "mnemonic": "call 0x804828b",
+        "opcode": "e8 e7 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080480a4;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x804828b, 0) #call with return address @ (0x80480a4, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480a4",
+        "mnemonic": "mov [esp], ebx",
+        "opcode": "89 1c 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80480a7, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480a7",
+        "mnemonic": "call 0x80481f3",
+        "opcode": "e8 47 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080480ac;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80481f3, 0) #call with return address @ (0x80480ac, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480ac",
+        "mnemonic": "mov [esp], 0x8048322",
+        "opcode": "c7 04 24 22 83 04 08 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := 0x08048322;" ] },
+          { "id": 1, "lines": [ "goto (0x80480b3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480b3",
+        "mnemonic": "call 0x80482d3",
+        "opcode": "e8 1b 02 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080480b8;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482d3, 0) #call with return address @ (0x80480b8, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480b8",
+        "mnemonic": "lea esp, [ebp + 0xfffffff8]",
+        "opcode": "8d 65 f8 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (ebp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "goto (0x80480bb, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480bb",
+        "mnemonic": "xor eax, eax",
+        "opcode": "31 c0 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := 0<32>;" ] },
+          { "id": 1, "lines": [ "OF<1> := 0<1>;" ] },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := 0<1>;" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := 0<1>;" ] },
+          { "id": 7, "lines": [ "eax<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80480bd, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480bd",
+        "mnemonic": "pop ecx",
+        "opcode": "59 ",
+        "code": [
+          { "id": 0, "lines": [ "ecx<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480be, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480be",
+        "mnemonic": "pop ebx",
+        "opcode": "5b ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480bf, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480bf",
+        "mnemonic": "pop ebp",
+        "opcode": "5d ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480c0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480c0",
+        "mnemonic": "lea esp, [ecx + 0xfffffffc]",
+        "opcode": "8d 61 fc ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (ecx<32> + -4<32>);" ] },
+          { "id": 1, "lines": [ "goto (0x80480c3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480c3",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480c4",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480c5, 0) " ] }
+        ],
+        "symbols": [ "check_char_0" ]
+      },
+      {
+        "address": "0x80480c5",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80480c7, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480c7",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80480ca, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480ca",
+        "mnemonic": "cmp [ebp + 0x8], 0x3d",
+        "opcode": "80 7d 08 3d ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 61<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -3<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 61<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80480ce, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480ce",
+        "mnemonic": "jz 0x80480da",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x80480da, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80480d0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480d0",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80480d3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480d3",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480d5, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480d5",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 1a 02 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080480da;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x80480da, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480da",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x80480db, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480db",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80480e0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480e0",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480e1",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480e2, 0) " ] }
+        ],
+        "symbols": [ "check_char_1" ]
+      },
+      {
+        "address": "0x80480e2",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80480e4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480e4",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80480e7, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480e7",
+        "mnemonic": "cmp [ebp + 0x8], 0x4d",
+        "opcode": "80 7d 08 4d ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 77<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -3<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 77<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80480eb, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480eb",
+        "mnemonic": "jz 0x80480f7",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x80480f7, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80480ed, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480ed",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80480f0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480f0",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480f2, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480f2",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 fd 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080480f7;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x80480f7, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480f7",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x80480f8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480f8",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80480fd, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480fd",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80480fe",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80480ff, 0) " ] }
+        ],
+        "symbols": [ "check_char_2" ]
+      },
+      {
+        "address": "0x80480ff",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048101, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048101",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048104, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048104",
+        "mnemonic": "mov eax, [ebp + 0x8]",
+        "opcode": "8b 45 08 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := @[(ebp<32> + 8<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x8048107, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048107",
+        "mnemonic": "lea eax, [eax + eax + 0x7a]",
+        "opcode": "8d 44 00 7a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (eax<32> + (eax<32> + 122<32>));" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804810b, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804810b",
+        "mnemonic": "cmp al, 0xfffffffc",
+        "opcode": "3c fc ",
+        "code": [
+          { "id": 0, "lines": [ "res8<8> := (eax<32>{7..0} - -4<8>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (! (eax<32>{7}) & (eax<32>{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (eax<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (eax<32>{7..0} <u -4<8>);" ] },
+          { "id": 7, "lines": [ "goto (0x804810d, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804810d",
+        "mnemonic": "jz 0x8048119",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x8048119, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804810f, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804810f",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048112, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048112",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048114, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048114",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 db 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048119;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x8048119, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048119",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x804811a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804811a",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804811f, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804811f",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048120",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048121, 0) " ] }
+        ],
+        "symbols": [ "check_char_3" ]
+      },
+      {
+        "address": "0x8048121",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048123, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048123",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048126, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048126",
+        "mnemonic": "cmp [ebp + 0x8], 0x4e",
+        "opcode": "80 7d 08 4e ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 78<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -2<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 78<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x804812a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804812a",
+        "mnemonic": "jz 0x8048136",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x8048136, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804812c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804812c",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x804812f, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804812f",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048131, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048131",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 be 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048136;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x8048136, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048136",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x8048137, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048137",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804813c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804813c",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804813d",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804813e, 0) " ] }
+        ],
+        "symbols": [ "check_char_4" ]
+      },
+      {
+        "address": "0x804813e",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048140, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048140",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048143, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048143",
+        "mnemonic": "mov eax, [ebp + 0x8]",
+        "opcode": "8b 45 08 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := @[(ebp<32> + 8<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x8048146, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048146",
+        "mnemonic": "add eax, eax",
+        "opcode": "01 c0 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (eax<32> + eax<32>);" ] },
+          {
+            "id": 1,
+            "lines": [ "OF<1> := (eax<32>{31} <> res32<32>{31});" ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := ((uext5 eax<32>{3..0}) + (uext5 eax<32>{3..0})){4};"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [
+              "CF<1> := ((uext33 eax<32>) + (uext33 eax<32>)){32};"
+            ]
+          },
+          { "id": 7, "lines": [ "eax<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048148, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048148",
+        "mnemonic": "cmp al, 0xffffffa8",
+        "opcode": "3c a8 ",
+        "code": [
+          { "id": 0, "lines": [ "res8<8> := (eax<32>{7..0} - -88<8>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (! (eax<32>{7}) & (eax<32>{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (eax<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (eax<32>{7..0} <u -88<8>);" ] },
+          { "id": 7, "lines": [ "goto (0x804814a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804814a",
+        "mnemonic": "jz 0x8048156",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x8048156, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804814c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804814c",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x804814f, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804814f",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048151, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048151",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 9e 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048156;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x8048156, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048156",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x8048157, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048157",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804815c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804815c",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804815d",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804815e, 0) " ] }
+        ],
+        "symbols": [ "check_char_5" ]
+      },
+      {
+        "address": "0x804815e",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048160, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048160",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048163, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048163",
+        "mnemonic": "cmp [ebp + 0x8], 0x49",
+        "opcode": "80 7d 08 49 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 73<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -7<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 73<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x8048167, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048167",
+        "mnemonic": "jz 0x8048173",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x8048173, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x8048169, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048169",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x804816c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804816c",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804816e, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804816e",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 81 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048173;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x8048173, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048173",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x8048174, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048174",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048179, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048179",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804817a",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804817b, 0) " ] }
+        ],
+        "symbols": [ "check_char_6" ]
+      },
+      {
+        "address": "0x804817b",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804817d, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804817d",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048180, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048180",
+        "mnemonic": "cmp [ebp + 0x8], 0x43",
+        "opcode": "80 7d 08 43 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 67<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u 3<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 67<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x8048184, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048184",
+        "mnemonic": "jz 0x8048190",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x8048190, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x8048186, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048186",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048189, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048189",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804818b, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804818b",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 64 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048190;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x8048190, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048190",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x8048191, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048191",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048196, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048196",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048197",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048198, 0) " ] }
+        ],
+        "symbols": [ "check_char_7" ]
+      },
+      {
+        "address": "0x8048198",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804819a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804819a",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x804819d, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804819d",
+        "mnemonic": "cmp [ebp + 0x8], 0x4f",
+        "opcode": "80 7d 08 4f ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 79<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u -1<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 79<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80481a1, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481a1",
+        "mnemonic": "jz 0x80481ad",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x80481ad, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80481a3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481a3",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80481a6, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481a6",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80481a8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481a8",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 47 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080481ad;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x80481ad, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481ad",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x80481ae, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481ae",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80481b3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481b3",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481b4",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80481b5, 0) " ] }
+        ],
+        "symbols": [ "check_char_8" ]
+      },
+      {
+        "address": "0x80481b5",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80481b7, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481b7",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80481ba, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481ba",
+        "mnemonic": "cmp [ebp + 0x8], 0x52",
+        "opcode": "80 7d 08 52 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 82<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u 2<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 82<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80481be, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481be",
+        "mnemonic": "jz 0x80481ca",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x80481ca, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80481c0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481c0",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80481c3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481c3",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80481c5, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481c5",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 2a 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080481ca;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x80481ca, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481ca",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x80481cb, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481cb",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80481d0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481d0",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481d1",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80481d2, 0) " ] }
+        ],
+        "symbols": [ "check_char_9" ]
+      },
+      {
+        "address": "0x80481d2",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80481d4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481d4",
+        "mnemonic": "sub esp, 0x8",
+        "opcode": "83 ec 08 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 8<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -8<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 8<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80481d7, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481d7",
+        "mnemonic": "cmp [ebp + 0x8], 0x45",
+        "opcode": "80 7d 08 45 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(ebp<32> + 8<32>),<-,1] - 69<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ebp<32> + 8<32>),<-,1]{7} &",
+              "  (@[(ebp<32> + 8<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 8<32>),<-,1]{3..0} <u 5<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 8<32>),<-,1] <u 69<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80481db, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481db",
+        "mnemonic": "jz 0x80481e7",
+        "opcode": "74 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x80481e7, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80481dd, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481dd",
+        "mnemonic": "sub esp, 0xc",
+        "opcode": "83 ec 0c ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 12<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u -4<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 12<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80481e0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481e0",
+        "mnemonic": "push 0x1",
+        "opcode": "6a 01 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := 1<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80481e2, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481e2",
+        "mnemonic": "call 0x80482f4",
+        "opcode": "e8 0d 01 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x080481e7;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80482f4, 0) #call with return address @ (0x80481e7, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481e7",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x80481e8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481e8",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80481ed, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481ed",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481ee",
+        "mnemonic": "jmp 0x80480c4",
+        "opcode": "e9 d1 fe ff ff ",
+        "code": [ { "id": 0, "lines": [ "goto (0x80480c4, 0) " ] } ],
+        "symbols": [ "check_char_10" ]
+      },
+      {
+        "address": "0x80481f3",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80481f4, 0) " ] }
+        ],
+        "symbols": [ "check" ]
+      },
+      {
+        "address": "0x80481f4",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80481f6, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481f6",
+        "mnemonic": "push ebx",
+        "opcode": "53 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80481f7, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481f7",
+        "mnemonic": "sub esp, 0x10",
+        "opcode": "83 ec 10 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> - 16<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (esp<32>{31} & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := (esp<32>{3..0} <u 0<4>);" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (esp<32> <u 16<32>);" ] },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80481fa, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481fa",
+        "mnemonic": "mov ebx, [ebp + 0x8]",
+        "opcode": "8b 5d 08 ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := @[(ebp<32> + 8<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x80481fd, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80481fd",
+        "mnemonic": "movsx eax, [ebx]",
+        "opcode": "0f be 03 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := (sext32 @[ebx<32>,<-,1]);" ] },
+          { "id": 1, "lines": [ "goto (0x8048200, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048200",
+        "mnemonic": "push eax",
+        "opcode": "50 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048201, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048201",
+        "mnemonic": "call 0x80480c4",
+        "opcode": "e8 be fe ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048206;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80480c4, 0) #call with return address @ (0x8048206, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048206",
+        "mnemonic": "movsx eax, [ebx + 0x1]",
+        "opcode": "0f be 43 01 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 1<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804820a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804820a",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804820d, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804820d",
+        "mnemonic": "call 0x80480e1",
+        "opcode": "e8 cf fe ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048212;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80480e1, 0) #call with return address @ (0x8048212, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048212",
+        "mnemonic": "movsx eax, [ebx + 0x2]",
+        "opcode": "0f be 43 02 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 2<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x8048216, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048216",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048219, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048219",
+        "mnemonic": "call 0x80480fe",
+        "opcode": "e8 e0 fe ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x0804821e;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80480fe, 0) #call with return address @ (0x804821e, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804821e",
+        "mnemonic": "movsx eax, [ebx + 0x3]",
+        "opcode": "0f be 43 03 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 3<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x8048222, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048222",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048225, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048225",
+        "mnemonic": "call 0x8048120",
+        "opcode": "e8 f6 fe ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x0804822a;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x8048120, 0) #call with return address @ (0x804822a, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804822a",
+        "mnemonic": "movsx eax, [ebx + 0x4]",
+        "opcode": "0f be 43 04 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 4<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804822e, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804822e",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048231, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048231",
+        "mnemonic": "call 0x804813d",
+        "opcode": "e8 07 ff ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048236;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x804813d, 0) #call with return address @ (0x8048236, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048236",
+        "mnemonic": "movsx eax, [ebx + 0x5]",
+        "opcode": "0f be 43 05 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 5<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804823a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804823a",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804823d, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804823d",
+        "mnemonic": "call 0x804815d",
+        "opcode": "e8 1b ff ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048242;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x804815d, 0) #call with return address @ (0x8048242, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048242",
+        "mnemonic": "movsx eax, [ebx + 0x6]",
+        "opcode": "0f be 43 06 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 6<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x8048246, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048246",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048249, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048249",
+        "mnemonic": "call 0x804817a",
+        "opcode": "e8 2c ff ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x0804824e;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x804817a, 0) #call with return address @ (0x804824e, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804824e",
+        "mnemonic": "movsx eax, [ebx + 0x7]",
+        "opcode": "0f be 43 07 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 7<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x8048252, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048252",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048255, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048255",
+        "mnemonic": "call 0x8048197",
+        "opcode": "e8 3d ff ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x0804825a;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x8048197, 0) #call with return address @ (0x804825a, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804825a",
+        "mnemonic": "movsx eax, [ebx + 0x8]",
+        "opcode": "0f be 43 08 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 8<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804825e, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804825e",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048261, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048261",
+        "mnemonic": "call 0x80481b4",
+        "opcode": "e8 4e ff ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048266;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80481b4, 0) #call with return address @ (0x8048266, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048266",
+        "mnemonic": "movsx eax, [ebx + 0x9]",
+        "opcode": "0f be 43 09 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 9<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x804826a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804826a",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804826d, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804826d",
+        "mnemonic": "call 0x80481d1",
+        "opcode": "e8 5f ff ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x08048272;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80481d1, 0) #call with return address @ (0x8048272, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048272",
+        "mnemonic": "movsx eax, [ebx + 0xa]",
+        "opcode": "0f be 43 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "eax<32> := (sext32 @[(ebx<32> + 10<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "goto (0x8048276, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048276",
+        "mnemonic": "mov [esp], eax",
+        "opcode": "89 04 24 ",
+        "code": [
+          { "id": 0, "lines": [ "@[esp<32>,<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048279, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048279",
+        "mnemonic": "call 0x80480c4",
+        "opcode": "e8 46 fe ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x0804827e;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x80480c4, 0) #call with return address @ (0x804827e, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804827e",
+        "mnemonic": "mov ebx, [ebp + 0xfffffffc]",
+        "opcode": "8b 5d fc ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := @[(ebp<32> + -4<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x8048281, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048281",
+        "mnemonic": "add esp, 0x10",
+        "opcode": "83 c4 10 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esp<32> + 16<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (! (esp<32>{31}) & (esp<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := 0<1>;" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := ((uext33 esp<32>) + 16<33>){32};" ]
+          },
+          { "id": 7, "lines": [ "esp<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x8048284, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048284",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048289, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048289",
+        "mnemonic": "leave",
+        "opcode": "c9 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := ebp<32>;" ] },
+          { "id": 1, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 2, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 3, "lines": [ "goto (0x804828a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804828a",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804828b",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x804828c, 0) " ] }
+        ],
+        "symbols": [ "fgets" ]
+      },
+      {
+        "address": "0x804828c",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048291, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048291",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048293, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048293",
+        "mnemonic": "push edi",
+        "opcode": "57 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := edi<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048294, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048294",
+        "mnemonic": "push esi",
+        "opcode": "56 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := esi<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048295, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048295",
+        "mnemonic": "push ebx",
+        "opcode": "53 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048296, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048296",
+        "mnemonic": "push ecx",
+        "opcode": "51 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ecx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048297, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048297",
+        "mnemonic": "mov esi, [ebp + 0x8]",
+        "opcode": "8b 75 08 ",
+        "code": [
+          { "id": 0, "lines": [ "esi<32> := @[(ebp<32> + 8<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x804829a, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804829a",
+        "mnemonic": "sub eax, esi",
+        "opcode": "29 f0 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (eax<32> - esi<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := ((eax<32>{31} <> esi<32>{31}) & (eax<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "AF<1> := (eax<32>{3..0} <u esi<32>{3..0});" ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := (eax<32> <u esi<32>);" ] },
+          { "id": 7, "lines": [ "eax<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x804829c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804829c",
+        "mnemonic": "mov [ebp + 0xfffffff0], eax",
+        "opcode": "89 45 f0 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(ebp<32> + -16<32>),<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804829f, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804829f",
+        "mnemonic": "mov eax, [ebp + 0xfffffff0]",
+        "opcode": "8b 45 f0 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := @[(ebp<32> + -16<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x80482a2, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482a2",
+        "mnemonic": "mov edi, esi",
+        "opcode": "89 f7 ",
+        "code": [
+          { "id": 0, "lines": [ "edi<32> := esi<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482a4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482a4",
+        "mnemonic": "add eax, esi",
+        "opcode": "01 f0 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (eax<32> + esi<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := ((eax<32>{31} = esi<32>{31}) & (eax<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := ((uext5 eax<32>{3..0}) + (uext5 esi<32>{3..0})){4};"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [
+              "CF<1> := ((uext33 eax<32>) + (uext33 esi<32>)){32};"
+            ]
+          },
+          { "id": 7, "lines": [ "eax<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80482a6, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482a6",
+        "mnemonic": "cmp [ebp + 0xc], eax",
+        "opcode": "39 45 0c ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [
+              "res32<32> := (@[(ebp<32> + 12<32>),<-,4] - eax<32>);"
+            ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=",
+              " ((@[(ebp<32> + 15<32>),<-,1]{7} <> eax<32>{31}) &",
+              "  (@[(ebp<32> + 15<32>),<-,1]{7} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ebp<32> + 12<32>),<-,1]{3..0} <u eax<32>{3..0});"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ebp<32> + 12<32>),<-,4] <u eax<32>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80482a9, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482a9",
+        "mnemonic": "jle 0x80482c7",
+        "opcode": "7e 1c ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [
+              "if (ZF<1> | (SF<1> <> OF<1>)) goto (0x80482c7, 0) else goto 1"
+            ]
+          },
+          { "id": 1, "lines": [ "goto (0x80482ab, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482ab",
+        "mnemonic": "mov ebx, [ebp + 0x10]",
+        "opcode": "8b 5d 10 ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := @[(ebp<32> + 16<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x80482ae, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482ae",
+        "mnemonic": "mov eax, 0x3",
+        "opcode": "b8 03 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 3<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482b3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482b3",
+        "mnemonic": "mov ecx, esi",
+        "opcode": "89 f1 ",
+        "code": [
+          { "id": 0, "lines": [ "ecx<32> := esi<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482b5, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482b5",
+        "mnemonic": "mov edx, 0x1",
+        "opcode": "ba 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "edx<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482ba, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482ba",
+        "mnemonic": "unsupported int 128",
+        "opcode": "cd 80 ",
+        "code": [ { "id": 0, "lines": [ "#unsupported cd 80" ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482bc",
+        "mnemonic": "test eax, eax",
+        "opcode": "85 c0 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := eax<32>;" ] },
+          { "id": 1, "lines": [ "OF<1> := 0<1>;" ] },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "AF<1> := undef;" ] },
+          {
+            "id": 4,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 5, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 6, "lines": [ "CF<1> := 0<1>;" ] },
+          { "id": 7, "lines": [ "goto (0x80482be, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482be",
+        "mnemonic": "jz 0x80482c7",
+        "opcode": "74 07 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x80482c7, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80482c0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482c0",
+        "mnemonic": "inc esi",
+        "opcode": "46 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (esi<32> + 1<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (! (esi<32>{31}) & (esi<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          {
+            "id": 3,
+            "lines": [ "AF<1> := ((uext5 esi<32>{3..0}) + 1<5>){4};" ]
+          },
+          {
+            "id": 4,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 5, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 6, "lines": [ "esi<32> := res32<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x80482c1, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482c1",
+        "mnemonic": "cmp [esi + 0xffffffff], 0xa",
+        "opcode": "80 7e ff 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "res8<8> := (@[(esi<32> + -1<32>),<-,1] - 10<8>);" ]
+          },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(esi<32> + -1<32>),<-,1]{7} &",
+              "  (@[(esi<32> + -1<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(esi<32> + -1<32>),<-,1]{3..0} <u -6<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(esi<32> + -1<32>),<-,1] <u 10<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80482c5, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482c5",
+        "mnemonic": "jnz 0x804829f",
+        "opcode": "75 d8 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ! (ZF<1>) goto (0x804829f, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80482c7, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482c7",
+        "mnemonic": "mov [edi], 0x0",
+        "opcode": "c6 07 00 ",
+        "code": [
+          { "id": 0, "lines": [ "@[edi<32>,<-,1] := 0<8>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482ca, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482ca",
+        "mnemonic": "mov eax, [ebp + 0x8]",
+        "opcode": "8b 45 08 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := @[(ebp<32> + 8<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x80482cd, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482cd",
+        "mnemonic": "pop edx",
+        "opcode": "5a ",
+        "code": [
+          { "id": 0, "lines": [ "edx<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482ce, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482ce",
+        "mnemonic": "pop ebx",
+        "opcode": "5b ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482cf, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482cf",
+        "mnemonic": "pop esi",
+        "opcode": "5e ",
+        "code": [
+          { "id": 0, "lines": [ "esi<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482d0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482d0",
+        "mnemonic": "pop edi",
+        "opcode": "5f ",
+        "code": [
+          { "id": 0, "lines": [ "edi<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482d1, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482d1",
+        "mnemonic": "pop ebp",
+        "opcode": "5d ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482d2, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482d2",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482d3",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482d4, 0) " ] }
+        ],
+        "symbols": [ "puts" ]
+      },
+      {
+        "address": "0x80482d4",
+        "mnemonic": "xor edx, edx",
+        "opcode": "31 d2 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := 0<32>;" ] },
+          { "id": 1, "lines": [ "OF<1> := 0<1>;" ] },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 4, "lines": [ "AF<1> := 0<1>;" ] },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 6, "lines": [ "CF<1> := 0<1>;" ] },
+          { "id": 7, "lines": [ "edx<32> := res32<32>;" ] },
+          { "id": 8, "lines": [ "goto (0x80482d6, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482d6",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482d8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482d8",
+        "mnemonic": "push ebx",
+        "opcode": "53 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482d9, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482d9",
+        "mnemonic": "mov ecx, [ebp + 0x8]",
+        "opcode": "8b 4d 08 ",
+        "code": [
+          { "id": 0, "lines": [ "ecx<32> := @[(ebp<32> + 8<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x80482dc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482dc",
+        "mnemonic": "cmp [ecx + edx], 0x0",
+        "opcode": "80 3c 11 00 ",
+        "code": [
+          { "id": 0, "lines": [ "res8<8> := @[(ecx<32> + edx<32>),<-,1];" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> :=", " (@[(ecx<32> + edx<32>),<-,1]{7} &",
+              "  (@[(ecx<32> + edx<32>),<-,1]{7} <> res8<8>{7}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res8<8> <s 0<8>);" ] },
+          { "id": 3, "lines": [ "ZF<1> := (0<8> = res8<8>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "AF<1> := (@[(ecx<32> + edx<32>),<-,1]{3..0} <u 0<4>);"
+            ]
+          },
+          {
+            "id": 5,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res8<8>{0} ^ res8<8>{1}) ^ res8<8>{2}) ^ res8<8>{3}) ^ res8<8>{4}) ^",
+              "     res8<8>{5}) ^ res8<8>{6}) ^ res8<8>{7}));"
+            ]
+          },
+          {
+            "id": 6,
+            "lines": [ "CF<1> := (@[(ecx<32> + edx<32>),<-,1] <u 0<8>);" ]
+          },
+          { "id": 7, "lines": [ "goto (0x80482e0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482e0",
+        "mnemonic": "jz 0x80482e5",
+        "opcode": "74 03 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if ZF<1> goto (0x80482e5, 0) else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x80482e2, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482e2",
+        "mnemonic": "inc edx",
+        "opcode": "42 ",
+        "code": [
+          { "id": 0, "lines": [ "res32<32> := (edx<32> + 1<32>);" ] },
+          {
+            "id": 1,
+            "lines": [
+              "OF<1> := (! (edx<32>{31}) & (edx<32>{31} <> res32<32>{31}));"
+            ]
+          },
+          { "id": 2, "lines": [ "SF<1> := (res32<32> <s 0<32>);" ] },
+          {
+            "id": 3,
+            "lines": [ "AF<1> := ((uext5 edx<32>{3..0}) + 1<5>){4};" ]
+          },
+          {
+            "id": 4,
+            "lines": [
+              "PF<1> :=", " !",
+              " ((((((((res32<32>{0} ^ res32<32>{1}) ^ res32<32>{2}) ^ res32<32>{3}) ^",
+              "      res32<32>{4}) ^ res32<32>{5}) ^ res32<32>{6}) ^ res32<32>{7}));"
+            ]
+          },
+          { "id": 5, "lines": [ "ZF<1> := (0<32> = res32<32>);" ] },
+          { "id": 6, "lines": [ "edx<32> := res32<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x80482e3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482e3",
+        "mnemonic": "jmp 0x80482dc",
+        "opcode": "eb f7 ",
+        "code": [ { "id": 0, "lines": [ "goto (0x80482dc, 0) " ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482e5",
+        "mnemonic": "mov eax, 0x4",
+        "opcode": "b8 04 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 4<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482ea, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482ea",
+        "mnemonic": "mov ebx, 0x1",
+        "opcode": "bb 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482ef, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482ef",
+        "mnemonic": "unsupported int 128",
+        "opcode": "cd 80 ",
+        "code": [ { "id": 0, "lines": [ "#unsupported cd 80" ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482f1",
+        "mnemonic": "pop ebx",
+        "opcode": "5b ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482f2, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482f2",
+        "mnemonic": "pop ebp",
+        "opcode": "5d ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := @[esp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482f3, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482f3",
+        "mnemonic": "ret",
+        "opcode": "c3 ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "goto @[(esp<32> - 4<32>),<-,4] #return" ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482f4",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482f5, 0) " ] }
+        ],
+        "symbols": [ "exit" ]
+      },
+      {
+        "address": "0x80482f5",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482fa, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482fa",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x80482fc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482fc",
+        "mnemonic": "push ebx",
+        "opcode": "53 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x80482fd, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x80482fd",
+        "mnemonic": "mov ebx, [ebp + 0x8]",
+        "opcode": "8b 5d 08 ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := @[(ebp<32> + 8<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "goto (0x8048300, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048300",
+        "mnemonic": "unsupported int 128",
+        "opcode": "cd 80 ",
+        "code": [ { "id": 0, "lines": [ "#unsupported cd 80" ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048302",
+        "mnemonic": "push ebp",
+        "opcode": "55 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebp<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048303, 0) " ] }
+        ],
+        "symbols": [ "_start" ]
+      },
+      {
+        "address": "0x8048303",
+        "mnemonic": "mov ebp, esp",
+        "opcode": "89 e5 ",
+        "code": [
+          { "id": 0, "lines": [ "ebp<32> := esp<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048305, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048305",
+        "mnemonic": "push ebx",
+        "opcode": "53 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := ebx<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048306, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048306",
+        "mnemonic": "push eax",
+        "opcode": "50 ",
+        "code": [
+          { "id": 0, "lines": [ "@[(esp<32> - 4<32>),<-,4] := eax<32>;" ] },
+          { "id": 1, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 2, "lines": [ "goto (0x8048307, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048307",
+        "mnemonic": "call 0x8048074",
+        "opcode": "e8 68 fd ff ff ",
+        "code": [
+          { "id": 0, "lines": [ "esp<32> := (esp<32> - 4<32>);" ] },
+          { "id": 1, "lines": [ "@[esp<32>,<-,4] := 0x0804830c;" ] },
+          {
+            "id": 2,
+            "lines": [
+              "goto (0x8048074, 0) #call with return address @ (0x804830c, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804830c",
+        "mnemonic": "mov ebx, eax",
+        "opcode": "89 c3 ",
+        "code": [
+          { "id": 0, "lines": [ "ebx<32> := eax<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x804830e, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x804830e",
+        "mnemonic": "mov eax, 0x1",
+        "opcode": "b8 01 00 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "eax<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x8048313, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x8048313",
+        "mnemonic": "unsupported int 128",
+        "opcode": "cd 80 ",
+        "code": [ { "id": 0, "lines": [ "#unsupported cd 80" ] } ],
+        "symbols": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}
+.text-slate-600 {
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105/var(--tw-text-opacity));
+}
+.text-sm {
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+.text-center {
+  text-align: center;
+}
+.p-1\.5 {
+  padding: .375rem;
+}
+.border-transparent {
+  border-color: transparent;
+}
+.border {
+  border-width: 1px;
+}
+.rounded-md {
+  border-radius: .375rem;
+}
+.top-1 {
+  top: .25rem;
+}
+.right-9 {
+  right: 2.25rem;
+}
+.right-1 {
+  right: .25rem;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+.w-\[250px\] {
+  width: 250px;
+}
+.mt-4 {
+  margin-top: 1rem;
+}

@@ -1,0 +1,2268 @@
+[
+  {
+    "section": ".text",
+    "disassembly": [
+      {
+        "address": "0x010074",
+        "mnemonic": "stmdb\tsp!, {r0, r1, r2, r3, r4, lr}",
+        "opcode": "e9 2d 40 1f ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -24<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r0<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := r1<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -20<32>);" ] },
+          { "id": 4, "lines": [ "%%4<32> := r2<32>;" ] },
+          { "id": 5, "lines": [ "%%5<32> := (sp<32> + -16<32>);" ] },
+          { "id": 6, "lines": [ "%%6<32> := r3<32>;" ] },
+          { "id": 7, "lines": [ "%%7<32> := (sp<32> + -12<32>);" ] },
+          { "id": 8, "lines": [ "%%8<32> := r4<32>;" ] },
+          { "id": 9, "lines": [ "%%9<32> := (sp<32> + -8<32>);" ] },
+          { "id": 10, "lines": [ "%%10<32> := lr<32>;" ] },
+          { "id": 11, "lines": [ "%%11<32> := (sp<32> + -4<32>);" ] },
+          { "id": 12, "lines": [ "@[%%11<32>,<-,4] := %%10<32>;" ] },
+          { "id": 13, "lines": [ "@[%%9<32>,<-,4] := %%8<32>;" ] },
+          { "id": 14, "lines": [ "@[%%7<32>,<-,4] := %%6<32>;" ] },
+          { "id": 15, "lines": [ "@[%%5<32>,<-,4] := %%4<32>;" ] },
+          { "id": 16, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 17, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 18, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 19, "lines": [ "goto (0x010078, 0) " ] }
+        ],
+        "symbols": [ "main" ]
+      },
+      {
+        "address": "0x010078",
+        "mnemonic": "ldr\tr0, [pc, #48]",
+        "opcode": "e5 9f 00 30 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[0x000100b0,<-,4];" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01007c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01007c",
+        "mnemonic": "bl\t0x102bc",
+        "opcode": "eb 00 00 8e ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010080;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102bc, 0) #call with return address @ (0x010080, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010080",
+        "mnemonic": "ldr\tr3, [pc, #44]",
+        "opcode": "e5 9f 30 2c ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[0x000100b4,<-,4];" ] },
+          { "id": 1, "lines": [ "r3<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010084, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010084",
+        "mnemonic": "mov\tr1, #12",
+        "opcode": "e3 a0 10 0c ",
+        "code": [
+          { "id": 0, "lines": [ "r1<32> := 12<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010088, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010088",
+        "mnemonic": "ldr\tr2, [r3, #0]",
+        "opcode": "e5 93 20 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[r3<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "r2<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01008c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01008c",
+        "mnemonic": "add\tr0, sp, #4",
+        "opcode": "e2 8d 00 04 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010090, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010090",
+        "mnemonic": "bl\t0x10258",
+        "opcode": "eb 00 00 70 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010094;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x010258, 0) #call with return address @ (0x010094, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010094",
+        "mnemonic": "add\tr0, sp, #4",
+        "opcode": "e2 8d 00 04 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + 4<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010098, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010098",
+        "mnemonic": "bl\t0x101f0",
+        "opcode": "eb 00 00 54 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x0001009c;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0101f0, 0) #call with return address @ (0x01009c, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01009c",
+        "mnemonic": "ldr\tr0, [pc, #20]",
+        "opcode": "e5 9f 00 14 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[0x000100b8,<-,4];" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0100a0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100a0",
+        "mnemonic": "bl\t0x102bc",
+        "opcode": "eb 00 00 85 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x000100a4;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102bc, 0) #call with return address @ (0x0100a4, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100a4",
+        "mnemonic": "mov\tr0, #0",
+        "opcode": "e3 a0 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 0<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0100a8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100a8",
+        "mnemonic": "add\tsp, sp, #20",
+        "opcode": "e2 8d d0 14 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + 20<32>);" ] },
+          { "id": 1, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0100ac, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100ac",
+        "mnemonic": "ldr\tpc, [sp], #4",
+        "opcode": "e4 9d f0 04 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[sp<32>,<-,4];" ] },
+          { "id": 1, "lines": [ "%%1<1> := %%0<32>{0};" ] },
+          { "id": 2, "lines": [ "%%2<32> := (sp<32> + 4<32>);" ] },
+          {
+            "id": 3,
+            "lines": [
+              "%%3<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+            ]
+          },
+          { "id": 4, "lines": [ "sp<32> := %%2<32>;" ] },
+          { "id": 5, "lines": [ "t<1> := %%1<1>;" ] },
+          { "id": 6, "lines": [ "goto %%3<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100b0",
+        "mnemonic": "andeq\tr0, r1, r4, lsl #6",
+        "opcode": "01 03 04 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [
+              "%%0<32> := z<1> ? (r1<32> & (r4<32> lsl 6<32>)) : r0<32>;"
+            ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0100b4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100b4",
+        "mnemonic": "andeq\tr0, r2, ip, lsl r3",
+        "opcode": "02 03 1c ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [
+              "%%0<32> :=", " z<1>", " ? (r2<32> &",
+              "    ((ip<32> lsl (31<32> & r3<32>)) &",
+              "     ! (((31<32> - (255<32> & r3<32>)) asr 31<32>)))) : r0<32>;"
+            ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0100b8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100b8",
+        "mnemonic": "andeq\tr0, r1, r1, lsl r3",
+        "opcode": "01 03 11 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [
+              "%%0<32> :=", " z<1>", " ? (r1<32> &",
+              "    ((r1<32> lsl (31<32> & r3<32>)) &",
+              "     ! (((31<32> - (255<32> & r3<32>)) asr 31<32>)))) : r0<32>;"
+            ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0100bc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100bc",
+        "mnemonic": "cmp\tr0, #61",
+        "opcode": "e3 50 00 3d ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 61<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 61<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 61<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x0100c0, 0) " ] }
+        ],
+        "symbols": [ "check_char_0" ]
+      },
+      {
+        "address": "0x0100c0",
+        "mnemonic": "beq\t0x100d0",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x0100c4, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0100d0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100c4",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0100c8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100c8",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0100cc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100cc",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 86 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x000100d0;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x0100d0, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100d0",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0100d4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100d4",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100d8",
+        "mnemonic": "cmp\tr0, #77",
+        "opcode": "e3 50 00 4d ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 77<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 77<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 77<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x0100dc, 0) " ] }
+        ],
+        "symbols": [ "check_char_1" ]
+      },
+      {
+        "address": "0x0100dc",
+        "mnemonic": "beq\t0x100ec",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x0100e0, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0100ec, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100e0",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0100e4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100e4",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0100e8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100e8",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 7f ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x000100ec;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x0100ec, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100ec",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0100f0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100f0",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100f4",
+        "mnemonic": "add\tr0, r0, #61",
+        "opcode": "e2 80 00 3d ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> + 61<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0100f8, 0) " ] }
+        ],
+        "symbols": [ "check_char_2" ]
+      },
+      {
+        "address": "0x0100f8",
+        "mnemonic": "lsl\tr0, r0, #1",
+        "opcode": "e1 a0 00 80 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> lsl 1<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0100fc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0100fc",
+        "mnemonic": "and\tr0, r0, #254",
+        "opcode": "e2 00 00 fe ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (254<32> & r0<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010100, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010100",
+        "mnemonic": "cmp\tr0, #252",
+        "opcode": "e3 50 00 fc ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 252<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 252<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 252<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x010104, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010104",
+        "mnemonic": "beq\t0x10114",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x010108, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x010114, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010108",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x01010c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01010c",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x010110, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010110",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 75 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010114;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x010114, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010114",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010118, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010118",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01011c",
+        "mnemonic": "cmp\tr0, #78",
+        "opcode": "e3 50 00 4e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 78<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 78<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 78<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x010120, 0) " ] }
+        ],
+        "symbols": [ "check_char_3" ]
+      },
+      {
+        "address": "0x010120",
+        "mnemonic": "beq\t0x10130",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x010124, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x010130, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010124",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010128, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010128",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x01012c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01012c",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 6e ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010130;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x010130, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010130",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010134, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010134",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010138",
+        "mnemonic": "eor\tr0, r0, #19",
+        "opcode": "e2 20 00 13 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (19<32> ^ r0<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01013c, 0) " ] }
+        ],
+        "symbols": [ "check_char_4" ]
+      },
+      {
+        "address": "0x01013c",
+        "mnemonic": "lsl\tr0, r0, #1",
+        "opcode": "e1 a0 00 80 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> lsl 1<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010140, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010140",
+        "mnemonic": "and\tr0, r0, #255",
+        "opcode": "e2 00 00 ff ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (255<32> & r0<32>);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010144, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010144",
+        "mnemonic": "cmp\tr0, #142",
+        "opcode": "e3 50 00 8e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 142<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 142<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 142<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x010148, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010148",
+        "mnemonic": "beq\t0x10158",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x01014c, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x010158, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01014c",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010150, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010150",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x010154, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010154",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 64 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010158;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x010158, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010158",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x01015c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01015c",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010160",
+        "mnemonic": "cmp\tr0, #73",
+        "opcode": "e3 50 00 49 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 73<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 73<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 73<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x010164, 0) " ] }
+        ],
+        "symbols": [ "check_char_5" ]
+      },
+      {
+        "address": "0x010164",
+        "mnemonic": "beq\t0x10174",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x010168, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x010174, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010168",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x01016c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01016c",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x010170, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010170",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 5d ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010174;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x010174, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010174",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010178, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010178",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01017c",
+        "mnemonic": "cmp\tr0, #67",
+        "opcode": "e3 50 00 43 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 67<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 67<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 67<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x010180, 0) " ] }
+        ],
+        "symbols": [ "check_char_6" ]
+      },
+      {
+        "address": "0x010180",
+        "mnemonic": "beq\t0x10190",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x010184, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x010190, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010184",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010188, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010188",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x01018c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01018c",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 56 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010190;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x010190, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010190",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010194, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010194",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010198",
+        "mnemonic": "cmp\tr0, #79",
+        "opcode": "e3 50 00 4f ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 79<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 79<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 79<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x01019c, 0) " ] }
+        ],
+        "symbols": [ "check_char_7" ]
+      },
+      {
+        "address": "0x01019c",
+        "mnemonic": "beq\t0x101ac",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x0101a0, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0101ac, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101a0",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0101a4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101a4",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0101a8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101a8",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 4f ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x000101ac;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x0101ac, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101ac",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0101b0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101b0",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101b4",
+        "mnemonic": "cmp\tr0, #82",
+        "opcode": "e3 50 00 52 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 82<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 82<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 82<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x0101b8, 0) " ] }
+        ],
+        "symbols": [ "check_char_8" ]
+      },
+      {
+        "address": "0x0101b8",
+        "mnemonic": "beq\t0x101c8",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x0101bc, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0101c8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101bc",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0101c0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101c0",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0101c4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101c4",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 48 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x000101c8;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x0101c8, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101c8",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0101cc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101cc",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101d0",
+        "mnemonic": "cmp\tr0, #69",
+        "opcode": "e3 50 00 45 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r0<32> - 69<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 69<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 69<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x0101d4, 0) " ] }
+        ],
+        "symbols": [ "check_char_9" ]
+      },
+      {
+        "address": "0x0101d4",
+        "mnemonic": "beq\t0x101e4",
+        "opcode": "0a 00 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x0101d8, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0101e4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101d8",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0101dc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101dc",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0101e0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101e0",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb 00 00 41 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x000101e4;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x0101e4, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101e4",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0101e8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101e8",
+        "mnemonic": "bx\tlr",
+        "opcode": "e1 2f ff 1e ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<1> := lr<32>{0};" ] },
+          {
+            "id": 1,
+            "lines": [
+              "%%1<32> := (lr<32> & (-2<32> lsl (uext32 ! (%%0<1>))));"
+            ]
+          },
+          { "id": 2, "lines": [ "t<1> := %%0<1>;" ] },
+          { "id": 3, "lines": [ "goto %%1<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101ec",
+        "mnemonic": "b\t0x100bc",
+        "opcode": "ea ff ff b2 ",
+        "code": [ { "id": 0, "lines": [ "goto (0x0100bc, 0) " ] } ],
+        "symbols": [ "check_char_10" ]
+      },
+      {
+        "address": "0x0101f0",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0101f4, 0) " ] }
+        ],
+        "symbols": [ "check" ]
+      },
+      {
+        "address": "0x0101f4",
+        "mnemonic": "mov\tr4, r0",
+        "opcode": "e1 a0 40 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r0<32>;" ] },
+          { "id": 1, "lines": [ "r4<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0101f8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101f8",
+        "mnemonic": "ldrb\tr0, [r0, #0]",
+        "opcode": "e5 d0 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (uext32 @[r0<32>,<-,1]);" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0101fc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0101fc",
+        "mnemonic": "bl\t0x100bc",
+        "opcode": "eb ff ff ae ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010200;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0100bc, 0) #call with return address @ (0x010200, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010200",
+        "mnemonic": "ldrb\tr0, [r4, #1]",
+        "opcode": "e5 d4 00 01 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 1<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010204, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010204",
+        "mnemonic": "bl\t0x100d8",
+        "opcode": "eb ff ff b3 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010208;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0100d8, 0) #call with return address @ (0x010208, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010208",
+        "mnemonic": "ldrb\tr0, [r4, #2]",
+        "opcode": "e5 d4 00 02 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 2<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01020c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01020c",
+        "mnemonic": "bl\t0x100f4",
+        "opcode": "eb ff ff b8 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010210;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0100f4, 0) #call with return address @ (0x010210, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010210",
+        "mnemonic": "ldrb\tr0, [r4, #3]",
+        "opcode": "e5 d4 00 03 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 3<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010214, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010214",
+        "mnemonic": "bl\t0x1011c",
+        "opcode": "eb ff ff c0 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010218;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x01011c, 0) #call with return address @ (0x010218, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010218",
+        "mnemonic": "ldrb\tr0, [r4, #4]",
+        "opcode": "e5 d4 00 04 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 4<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01021c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01021c",
+        "mnemonic": "bl\t0x10138",
+        "opcode": "eb ff ff c5 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010220;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x010138, 0) #call with return address @ (0x010220, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010220",
+        "mnemonic": "ldrb\tr0, [r4, #5]",
+        "opcode": "e5 d4 00 05 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 5<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010224, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010224",
+        "mnemonic": "bl\t0x10160",
+        "opcode": "eb ff ff cd ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010228;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x010160, 0) #call with return address @ (0x010228, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010228",
+        "mnemonic": "ldrb\tr0, [r4, #6]",
+        "opcode": "e5 d4 00 06 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 6<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01022c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01022c",
+        "mnemonic": "bl\t0x1017c",
+        "opcode": "eb ff ff d2 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010230;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x01017c, 0) #call with return address @ (0x010230, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010230",
+        "mnemonic": "ldrb\tr0, [r4, #7]",
+        "opcode": "e5 d4 00 07 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 7<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010234, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010234",
+        "mnemonic": "bl\t0x10198",
+        "opcode": "eb ff ff d7 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010238;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x010198, 0) #call with return address @ (0x010238, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010238",
+        "mnemonic": "ldrb\tr0, [r4, #8]",
+        "opcode": "e5 d4 00 08 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 8<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01023c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01023c",
+        "mnemonic": "bl\t0x101b4",
+        "opcode": "eb ff ff dc ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010240;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0101b4, 0) #call with return address @ (0x010240, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010240",
+        "mnemonic": "ldrb\tr0, [r4, #9]",
+        "opcode": "e5 d4 00 09 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 9<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010244, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010244",
+        "mnemonic": "bl\t0x101d0",
+        "opcode": "eb ff ff e1 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010248;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0101d0, 0) #call with return address @ (0x010248, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010248",
+        "mnemonic": "ldrb\tr0, [r4, #10]",
+        "opcode": "e5 d4 00 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r4<32> + 10<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01024c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01024c",
+        "mnemonic": "bl\t0x100bc",
+        "opcode": "eb ff ff 9a ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010250;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0100bc, 0) #call with return address @ (0x010250, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010250",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010254, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010254",
+        "mnemonic": "ldmia\tsp!, {r4, pc}",
+        "opcode": "e8 bd 80 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[(sp<32> + 4<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "%%1<1> := %%0<32>{0};" ] },
+          { "id": 2, "lines": [ "%%2<32> := @[sp<32>,<-,4];" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + 8<32>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "%%4<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+            ]
+          },
+          { "id": 5, "lines": [ "sp<32> := %%3<32>;" ] },
+          { "id": 6, "lines": [ "r4<32> := %%2<32>;" ] },
+          { "id": 7, "lines": [ "t<1> := %%1<1>;" ] },
+          { "id": 8, "lines": [ "goto %%4<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010258",
+        "mnemonic": "stmdb\tsp!, {r4, r5, r6, r7, lr}",
+        "opcode": "e9 2d 40 f0 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -20<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := r5<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -16<32>);" ] },
+          { "id": 4, "lines": [ "%%4<32> := r6<32>;" ] },
+          { "id": 5, "lines": [ "%%5<32> := (sp<32> + -12<32>);" ] },
+          { "id": 6, "lines": [ "%%6<32> := r7<32>;" ] },
+          { "id": 7, "lines": [ "%%7<32> := (sp<32> + -8<32>);" ] },
+          { "id": 8, "lines": [ "%%8<32> := lr<32>;" ] },
+          { "id": 9, "lines": [ "%%9<32> := (sp<32> + -4<32>);" ] },
+          { "id": 10, "lines": [ "@[%%9<32>,<-,4] := %%8<32>;" ] },
+          { "id": 11, "lines": [ "@[%%7<32>,<-,4] := %%6<32>;" ] },
+          { "id": 12, "lines": [ "@[%%5<32>,<-,4] := %%4<32>;" ] },
+          { "id": 13, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 14, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 15, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 16, "lines": [ "goto (0x01025c, 0) " ] }
+        ],
+        "symbols": [ "fgets" ]
+      },
+      {
+        "address": "0x01025c",
+        "mnemonic": "mov\tr3, r0",
+        "opcode": "e1 a0 30 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r0<32>;" ] },
+          { "id": 1, "lines": [ "r3<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010260, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010260",
+        "mnemonic": "mov\tlr, r1",
+        "opcode": "e1 a0 e0 01 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r1<32>;" ] },
+          { "id": 1, "lines": [ "lr<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010264, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010264",
+        "mnemonic": "mov\tr4, r2",
+        "opcode": "e1 a0 40 02 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r2<32>;" ] },
+          { "id": 1, "lines": [ "r4<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010268, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010268",
+        "mnemonic": "mov\tip, r0",
+        "opcode": "e1 a0 c0 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r0<32>;" ] },
+          { "id": 1, "lines": [ "ip<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01026c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01026c",
+        "mnemonic": "rsb\tr6, r0, #1",
+        "opcode": "e2 60 60 01 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (1<32> - r0<32>);" ] },
+          { "id": 1, "lines": [ "r6<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010270, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010270",
+        "mnemonic": "add\tr2, r6, ip",
+        "opcode": "e0 86 20 0c ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r6<32> + ip<32>);" ] },
+          { "id": 1, "lines": [ "r2<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010274, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010274",
+        "mnemonic": "cmp\tlr, r2",
+        "opcode": "e1 5e 00 02 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (lr<32> - r2<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (lr<32> >=u r2<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (lr<32> <s r2<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x010278, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010278",
+        "mnemonic": "mov\tr5, ip",
+        "opcode": "e1 a0 50 0c ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := ip<32>;" ] },
+          { "id": 1, "lines": [ "r5<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x01027c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01027c",
+        "mnemonic": "ble\t0x102ac",
+        "opcode": "da 00 00 0a ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "if (z<1> | (n<1> ^ v<1>)) goto 2 else goto 1" ]
+          },
+          { "id": 1, "lines": [ "goto (0x010280, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0102ac, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010280",
+        "mnemonic": "mov\tr0, r4",
+        "opcode": "e1 a0 00 04 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r4<32>;" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010284, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010284",
+        "mnemonic": "mov\tr1, ip",
+        "opcode": "e1 a0 10 0c ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := ip<32>;" ] },
+          { "id": 1, "lines": [ "r1<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x010288, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010288",
+        "mnemonic": "mov\tr2, #1",
+        "opcode": "e3 a0 20 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r2<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x01028c, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01028c",
+        "mnemonic": "mov\tr7, #3",
+        "opcode": "e3 a0 70 03 ",
+        "code": [
+          { "id": 0, "lines": [ "r7<32> := 3<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x010290, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010290",
+        "mnemonic": "swi\t#0",
+        "opcode": "ef 00 00 00 ",
+        "code": [ { "id": 0, "lines": [ "#unsupported swi#0" ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x010294",
+        "mnemonic": "cmp\tr0, #0",
+        "opcode": "e3 50 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r0<32>;" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r0<32> >=u 0<32>);" ] },
+          { "id": 4, "lines": [ "%%4<1> := (%%1<1> ^ (r0<32> <s 0<32>));" ] },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x010298, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010298",
+        "mnemonic": "beq\t0x102ac",
+        "opcode": "0a 00 00 03 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x01029c, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0102ac, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x01029c",
+        "mnemonic": "ldrb\tr2, [r5, #0]",
+        "opcode": "e5 d5 20 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (uext32 @[r5<32>,<-,1]);" ] },
+          { "id": 1, "lines": [ "r2<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0102a0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102a0",
+        "mnemonic": "add\tip, ip, #1",
+        "opcode": "e2 8c c0 01 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (ip<32> + 1<32>);" ] },
+          { "id": 1, "lines": [ "ip<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0102a4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102a4",
+        "mnemonic": "cmp\tr2, #10",
+        "opcode": "e3 52 00 0a ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r2<32> - 10<32>);" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r2<32> >=u 10<32>);" ] },
+          {
+            "id": 4,
+            "lines": [ "%%4<1> := (%%1<1> ^ (r2<32> <s 10<32>));" ]
+          },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x0102a8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102a8",
+        "mnemonic": "bne\t0x10270",
+        "opcode": "1a ff ff f0 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x010270, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0102ac, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102ac",
+        "mnemonic": "mov\tr2, #0",
+        "opcode": "e3 a0 20 00 ",
+        "code": [
+          { "id": 0, "lines": [ "r2<32> := 0<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0102b0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102b0",
+        "mnemonic": "mov\tr0, r3",
+        "opcode": "e1 a0 00 03 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r3<32>;" ] },
+          { "id": 1, "lines": [ "r0<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0102b4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102b4",
+        "mnemonic": "strb\tr2, [r5, #0]",
+        "opcode": "e5 c5 20 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<8> := r2<32>{7..0};" ] },
+          { "id": 1, "lines": [ "%%1<32> := r5<32>;" ] },
+          { "id": 2, "lines": [ "@[%%1<32>,<-,1] := %%0<8>;" ] },
+          { "id": 3, "lines": [ "goto (0x0102b8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102b8",
+        "mnemonic": "ldmia\tsp!, {r4, r5, r6, r7, pc}",
+        "opcode": "e8 bd 80 f0 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[(sp<32> + 16<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "%%1<1> := %%0<32>{0};" ] },
+          { "id": 2, "lines": [ "%%2<32> := @[sp<32>,<-,4];" ] },
+          { "id": 3, "lines": [ "%%3<32> := @[(sp<32> + 4<32>),<-,4];" ] },
+          { "id": 4, "lines": [ "%%4<32> := @[(sp<32> + 8<32>),<-,4];" ] },
+          { "id": 5, "lines": [ "%%5<32> := @[(sp<32> + 12<32>),<-,4];" ] },
+          { "id": 6, "lines": [ "%%6<32> := (sp<32> + 20<32>);" ] },
+          {
+            "id": 7,
+            "lines": [
+              "%%7<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+            ]
+          },
+          { "id": 8, "lines": [ "sp<32> := %%6<32>;" ] },
+          { "id": 9, "lines": [ "r7<32> := %%5<32>;" ] },
+          { "id": 10, "lines": [ "r6<32> := %%4<32>;" ] },
+          { "id": 11, "lines": [ "r5<32> := %%3<32>;" ] },
+          { "id": 12, "lines": [ "r4<32> := %%2<32>;" ] },
+          { "id": 13, "lines": [ "t<1> := %%1<1>;" ] },
+          { "id": 14, "lines": [ "goto %%7<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102bc",
+        "mnemonic": "mov\tr1, r0",
+        "opcode": "e1 a0 10 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r0<32>;" ] },
+          { "id": 1, "lines": [ "r1<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0102c0, 0) " ] }
+        ],
+        "symbols": [ "puts" ]
+      },
+      {
+        "address": "0x0102c0",
+        "mnemonic": "mov\tr2, #0",
+        "opcode": "e3 a0 20 00 ",
+        "code": [
+          { "id": 0, "lines": [ "r2<32> := 0<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0102c4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102c4",
+        "mnemonic": "stmdb\tsp!, {r7, lr}",
+        "opcode": "e9 2d 40 80 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r7<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0102c8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102c8",
+        "mnemonic": "ldrb\tr3, [r1, r2]",
+        "opcode": "e7 d1 30 02 ",
+        "code": [
+          {
+            "id": 0,
+            "lines": [ "%%0<32> := (uext32 @[(r1<32> + r2<32>),<-,1]);" ]
+          },
+          { "id": 1, "lines": [ "r3<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0102cc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102cc",
+        "mnemonic": "cmp\tr3, #0",
+        "opcode": "e3 53 00 00 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := r3<32>;" ] },
+          { "id": 1, "lines": [ "%%1<1> := (%%0<32> <s 0<32>);" ] },
+          { "id": 2, "lines": [ "%%2<1> := (0<32> = %%0<32>);" ] },
+          { "id": 3, "lines": [ "%%3<1> := (r3<32> >=u 0<32>);" ] },
+          { "id": 4, "lines": [ "%%4<1> := (%%1<1> ^ (r3<32> <s 0<32>));" ] },
+          { "id": 5, "lines": [ "v<1> := %%4<1>;" ] },
+          { "id": 6, "lines": [ "c<1> := %%3<1>;" ] },
+          { "id": 7, "lines": [ "z<1> := %%2<1>;" ] },
+          { "id": 8, "lines": [ "n<1> := %%1<1>;" ] },
+          { "id": 9, "lines": [ "goto (0x0102d0, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102d0",
+        "mnemonic": "bne\t0x102e4",
+        "opcode": "1a 00 00 03 ",
+        "code": [
+          { "id": 0, "lines": [ "if z<1> goto 2 else goto 1" ] },
+          { "id": 1, "lines": [ "goto (0x0102e4, 0) " ] },
+          { "id": 2, "lines": [ "goto (0x0102d4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102d4",
+        "mnemonic": "mov\tr0, #1",
+        "opcode": "e3 a0 00 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r0<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0102d8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102d8",
+        "mnemonic": "mov\tr7, #4",
+        "opcode": "e3 a0 70 04 ",
+        "code": [
+          { "id": 0, "lines": [ "r7<32> := 4<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0102dc, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102dc",
+        "mnemonic": "swi\t#0",
+        "opcode": "ef 00 00 00 ",
+        "code": [ { "id": 0, "lines": [ "#unsupported swi#0" ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102e0",
+        "mnemonic": "ldmia\tsp!, {r7, pc}",
+        "opcode": "e8 bd 80 80 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := @[(sp<32> + 4<32>),<-,4];" ] },
+          { "id": 1, "lines": [ "%%1<1> := %%0<32>{0};" ] },
+          { "id": 2, "lines": [ "%%2<32> := @[sp<32>,<-,4];" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + 8<32>);" ] },
+          {
+            "id": 4,
+            "lines": [
+              "%%4<32> := (%%0<32> & (-2<32> lsl (uext32 ! (%%1<1>))));"
+            ]
+          },
+          { "id": 5, "lines": [ "sp<32> := %%3<32>;" ] },
+          { "id": 6, "lines": [ "r7<32> := %%2<32>;" ] },
+          { "id": 7, "lines": [ "t<1> := %%1<1>;" ] },
+          { "id": 8, "lines": [ "goto %%4<32> " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102e4",
+        "mnemonic": "add\tr2, r2, #1",
+        "opcode": "e2 82 20 01 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (r2<32> + 1<32>);" ] },
+          { "id": 1, "lines": [ "r2<32> := %%0<32>;" ] },
+          { "id": 2, "lines": [ "goto (0x0102e8, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102e8",
+        "mnemonic": "b\t0x102c8",
+        "opcode": "ea ff ff f6 ",
+        "code": [ { "id": 0, "lines": [ "goto (0x0102c8, 0) " ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102ec",
+        "mnemonic": "stmdb\tsp!, {r7, lr}",
+        "opcode": "e9 2d 40 80 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r7<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0102f0, 0) " ] }
+        ],
+        "symbols": [ "exit" ]
+      },
+      {
+        "address": "0x0102f0",
+        "mnemonic": "mov\tr7, #1",
+        "opcode": "e3 a0 70 01 ",
+        "code": [
+          { "id": 0, "lines": [ "r7<32> := 1<32>;" ] },
+          { "id": 1, "lines": [ "goto (0x0102f4, 0) " ] }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102f4",
+        "mnemonic": "swi\t#0",
+        "opcode": "ef 00 00 00 ",
+        "code": [ { "id": 0, "lines": [ "#unsupported swi#0" ] } ],
+        "symbols": []
+      },
+      {
+        "address": "0x0102f8",
+        "mnemonic": "stmdb\tsp!, {r4, lr}",
+        "opcode": "e9 2d 40 10 ",
+        "code": [
+          { "id": 0, "lines": [ "%%0<32> := (sp<32> + -8<32>);" ] },
+          { "id": 1, "lines": [ "%%1<32> := r4<32>;" ] },
+          { "id": 2, "lines": [ "%%2<32> := lr<32>;" ] },
+          { "id": 3, "lines": [ "%%3<32> := (sp<32> + -4<32>);" ] },
+          { "id": 4, "lines": [ "@[%%3<32>,<-,4] := %%2<32>;" ] },
+          { "id": 5, "lines": [ "@[%%0<32>,<-,4] := %%1<32>;" ] },
+          { "id": 6, "lines": [ "sp<32> := %%0<32>;" ] },
+          { "id": 7, "lines": [ "goto (0x0102fc, 0) " ] }
+        ],
+        "symbols": [ "_start" ]
+      },
+      {
+        "address": "0x0102fc",
+        "mnemonic": "bl\t0x10074",
+        "opcode": "eb ff ff 5c ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010300;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x010074, 0) #call with return address @ (0x010300, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      },
+      {
+        "address": "0x010300",
+        "mnemonic": "bl\t0x102ec",
+        "opcode": "eb ff ff f9 ",
+        "code": [
+          { "id": 0, "lines": [ "lr<32> := 0x00010304;" ] },
+          {
+            "id": 1,
+            "lines": [
+              "goto (0x0102ec, 0) #call with return address @ (0x010304, 0)"
+            ]
+          }
+        ],
+        "symbols": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+.hex-panel {
+  display: flex;
+}
+
+.hex-legend {
+  color: var(--prism-color);
+}
+
+.hex-dump {
+  font-family: monospace, monospace;
+  width: 52ch;
+  min-width: 52ch;
+  height: 16lh;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: 11ch 40ch;
+  box-shadow: var(--ifm-global-shadow-lw);
+  border-radius: var(--ifm-code-border-radius);
+  margin-bottom: var(--ifm-leading);
+  background-color: var(--prism-background-color);
+  color: var(--prism-color);
+}
+
+.hex-dump .hex-offset {
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  padding: 0 .5em;
+  margin-right: .5em;
+  color: #888
+}
+
+
+.hex-dump .hex-label:hover {
+  filter: brightness(110%);
+}
+
+.instruction {
+  cursor: pointer;
+}
+
+.symbol:hover {
+  background: repeating-linear-gradient(
+  -45deg,
+  transparent,
+  transparent 10px,
+  color-mix(in srgb, var(--ifm-color-white) 30%, transparent) 10px,
+  color-mix(in srgb, var(--ifm-color-white) 30%, transparent) 20px
+);
+  padding-bottom: 4px;
+  padding-top: 4px;
+  /* outline: 2px solid var(--ifm-color-warning); */
+  /* border-left: 2px solid var(--ifm-color-warning);
+  border-bottom: 3px solid var(--ifm-color-warning);
+  margin-left: -2px;
+  margin-bottom: -3px;
+  padding-bottom: 0px; */
+}
+
+.not-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

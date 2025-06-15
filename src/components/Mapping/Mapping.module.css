@@ -1,0 +1,65 @@
+.mapping {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.mapping {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1rem;
+}
+
+
+.column {
+  min-width: 0;
+}
+
+.symbol {
+  cursor: pointer;
+  font-weight: normal;
+
+  /* éviter les effets hérités */
+  text-decoration: none !important;
+
+  /* base neutre */
+  padding: 0 2px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    padding 60ms ease,
+    font-weight 120ms ease;
+}
+
+/* hover simple */
+.symbol:hover {
+  font-weight: 600;
+  padding: 0 6px;
+
+  background-color: rgba(200, 170, 255, 0.35); /* violet clair */
+  border-color: red;
+}
+html[data-theme='dark'] .symbol:hover {
+  background-color: rgba(140, 110, 220, 0.45); /* violet plus sombre */
+  border-color: #ff6b6b;
+}
+
+/* état actif (From ⇄ To synchronisé) */
+.active {
+  font-weight: 700;
+  padding: 0 6px;
+
+  background-color: rgba(200, 170, 255, 0.45);
+  border: 2px solid red;
+}
+html[data-theme='dark'] .active {
+  background-color: rgba(160, 130, 255, 0.55);
+  border-color: #ff8a8a;
+}
+
